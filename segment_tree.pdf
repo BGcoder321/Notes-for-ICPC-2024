@@ -1,0 +1,2618 @@
+%PDF-1.3
+1 0 obj
+<< /Type /Catalog
+/Outlines 2 0 R
+/Pages 3 0 R >>
+endobj
+2 0 obj
+<< /Type /Outlines /Count 0 >>
+endobj
+3 0 obj
+<< /Type /Pages
+/Kids [6 0 R
+14 0 R
+18 0 R
+20 0 R
+22 0 R
+24 0 R
+26 0 R
+28 0 R
+30 0 R
+32 0 R
+34 0 R
+36 0 R
+38 0 R
+40 0 R
+44 0 R
+46 0 R
+48 0 R
+50 0 R
+52 0 R
+54 0 R
+60 0 R
+64 0 R
+66 0 R
+]
+/Count 23
+/Resources <<
+/ProcSet 4 0 R
+/Font << 
+/F1 8 0 R
+/F2 9 0 R
+/F3 16 0 R
+/F4 17 0 R
+>>
+>>
+/MediaBox [0.000 0.000 595.280 841.890]
+ >>
+endobj
+4 0 obj
+[/PDF /Text ]
+endobj
+5 0 obj
+<<
+/Creator (DOMPDF)
+/CreationDate (D:20240223013850+00'00')
+/ModDate (D:20240223013850+00'00')
+>>
+endobj
+6 0 obj
+<< /Type /Page
+/Parent 3 0 R
+/Annots [ 10 0 R 12 0 R ]
+/Contents 7 0 R
+>>
+endobj
+7 0 obj
+<<
+/Length 5923 >>
+stream
+
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+34.016 801.874 m 561.264 801.874 l 560.514 801.124 l 34.766 801.124 l  f
+0.160 0.160 0.160 rg
+0.160 0.160 0.160 RG
+34.016 800.374 m 561.264 800.374 l 560.514 801.124 l 34.766 801.124 l  f
+561.264 801.874 m 561.264 800.374 l 560.514 801.124 l 560.514 801.124 l  f
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+34.016 801.874 m 34.016 800.374 l 34.766 801.124 l 34.766 801.124 l  f
+BT 34.016 776.969 Td /F1 12.0 Tf  [(tags: - Translated)] TJ ET
+BT 34.016 742.071 Td /F2 18.0 Tf  [(e_maxx_link: segment_tree)] TJ ET
+BT 34.016 698.905 Td /F2 24.0 Tf  [(Segment Tree)] TJ ET
+BT 34.016 665.717 Td /F1 12.0 Tf  [(A Segment Tree is a data structure that stores information about array intervals as a tree. This allows )] TJ ET
+BT 34.016 651.461 Td /F1 12.0 Tf  [(answering range queries over an array efficiently, while still being flexible enough to allow quick )] TJ ET
+BT 34.016 637.205 Td /F1 12.0 Tf  [(modification of the array. This includes finding the sum of consecutive array elements \\\(a[l \\dots r]\\\), or )] TJ ET
+BT 34.016 622.949 Td /F1 12.0 Tf  [(finding the minimum element in a such a range in \\\(O\(\\log n\)\\\) time. Between answering such queries, the )] TJ ET
+BT 34.016 608.693 Td /F1 12.0 Tf  [(Segment Tree allows modifying the array by replacing one element, or even changing the elements of a )] TJ ET
+BT 34.016 594.437 Td /F1 12.0 Tf  [(whole subsegment \(e.g. assigning all elements \\\(a[l \\dots r]\\\) to any value, or adding a value to all element in )] TJ ET
+BT 34.016 580.181 Td /F1 12.0 Tf  [(the subsegment\).)] TJ ET
+BT 34.016 553.925 Td /F1 12.0 Tf  [(In general, a Segment Tree is a very flexible data structure, and a huge number of problems can be solved )] TJ ET
+BT 34.016 539.669 Td /F1 12.0 Tf  [(with it. Additionally, it is also possible to apply more complex operations and answer more complex queries )] TJ ET
+BT 34.016 525.413 Td /F1 12.0 Tf  [(\(see )] TJ ET
+0.000 0.000 0.800 rg
+BT 56.336 525.413 Td /F1 12.0 Tf  [(Advanced versions of Segment Trees)] TJ ET
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+56.336 522.713 m 235.628 522.713 l S
+0.000 0.000 0.000 rg
+BT 235.628 525.413 Td /F1 12.0 Tf  [(\). In particular the Segment Tree can be easily generalized to )] TJ ET
+BT 34.016 511.157 Td /F1 12.0 Tf  [(larger dimensions. For instance, with a two-dimensional Segment Tree you can answer sum or minimum )] TJ ET
+BT 34.016 496.901 Td /F1 12.0 Tf  [(queries over some subrectangle of a given matrix in only \\\(O\(\\log^2 n\)\\\) time.)] TJ ET
+BT 34.016 470.645 Td /F1 12.0 Tf  [(One important property of Segment Trees is that they require only a linear amount of memory. The standard )] TJ ET
+BT 34.016 456.389 Td /F1 12.0 Tf  [(Segment Tree requires \\\(4n\\\) vertices for working on an array of size \\\(n\\\).)] TJ ET
+BT 34.016 421.491 Td /F2 18.0 Tf  [(Simplest form of a Segment Tree)] TJ ET
+BT 34.016 390.869 Td /F1 12.0 Tf  [(To start easy, we consider the simplest form of a Segment Tree. We want to answer sum queries efficiently. )] TJ ET
+BT 34.016 376.613 Td /F1 12.0 Tf  [(The formal definition of our task is: Given an array \\\(a[0 \\dots n-1]\\\), the Segment Tree must be able to find )] TJ ET
+BT 34.016 362.357 Td /F1 12.0 Tf  [(the sum of elements between the indices \\\(l\\\) and \\\(r\\\) \(i.e. computing the sum \\\(\\sum_{i=l}^r a[i]\\\)\), and )] TJ ET
+BT 34.016 348.101 Td /F1 12.0 Tf  [(also handle changing values of the elements in the array \(i.e. perform assignments of the form \\\(a[i] = x\\\)\). )] TJ ET
+BT 34.016 333.845 Td /F1 12.0 Tf  [(The Segment Tree should be able to process )] TJ ET
+BT 249.308 333.845 Td /F2 12.0 Tf  [(both)] TJ ET
+BT 272.648 333.845 Td /F1 12.0 Tf  [( queries in \\\(O\(\\log n\)\\\) time.)] TJ ET
+BT 34.016 307.589 Td /F1 12.0 Tf  [(This is an improvement over the simpler approaches. A naive array implementation - just using a simple )] TJ ET
+BT 34.016 293.333 Td /F1 12.0 Tf  [(array - can update elements in \\\(O\(1\)\\\), but requires \\\(O\(n\)\\\) to compute each sum query. And precomputed )] TJ ET
+BT 34.016 279.077 Td /F1 12.0 Tf  [(prefix sums can compute sum queries in \\\(O\(1\)\\\), but updating an array element requires \\\(O\(n\)\\\) changes to )] TJ ET
+BT 34.016 264.821 Td /F1 12.0 Tf  [(the prefix sums.)] TJ ET
+BT 34.016 236.627 Td /F2 14.0 Tf  [(Structure of the Segment Tree)] TJ ET
+BT 34.016 209.886 Td /F1 12.0 Tf  [(We can take a divide-and-conquer approach when it comes to array segments. We compute and store the )] TJ ET
+BT 34.016 195.630 Td /F1 12.0 Tf  [(sum of the elements of the whole array, i.e. the sum of the segment \\\(a[0 \\dots n-1]\\\). We then split the array )] TJ ET
+BT 34.016 181.374 Td /F1 12.0 Tf  [(into two halves \\\(a[0 \\dots n/2-1]\\\) and \\\(a[n/2 \\dots n-1]\\\) and compute the sum of each halve and store )] TJ ET
+BT 34.016 167.118 Td /F1 12.0 Tf  [(them. Each of these two halves in turn are split in half, and so on until all segments reach size \\\(1\\\).)] TJ ET
+BT 34.016 140.862 Td /F1 12.0 Tf  [(We can view these segments as forming a binary tree: the root of this tree is the segment \\\(a[0 \\dots n-1]\\\), )] TJ ET
+BT 34.016 126.606 Td /F1 12.0 Tf  [(and each vertex \(except leaf vertices\) has exactly two child vertices. This is why the data structure is called )] TJ ET
+BT 551.216 126.606 Td /F1 12.0 Tf  [(")] TJ ET
+BT 34.016 112.350 Td /F1 12.0 Tf  [(Segment Tree)] TJ ET
+BT 101.000 112.350 Td /F1 12.0 Tf  [(")] TJ ET
+BT 105.896 112.350 Td /F1 12.0 Tf  [(, even though in most implementations the tree is not constructed explicitly \(see )] TJ ET
+0.000 0.000 0.800 rg
+BT 34.016 98.094 Td /F1 12.0 Tf  [(Implementation)] TJ ET
+0.6 w 0 J [  ] 0 d
+34.016 95.394 m 110.012 95.394 l S
+0.000 0.000 0.000 rg
+BT 110.012 98.094 Td /F1 12.0 Tf  [(\).)] TJ ET
+BT 34.016 71.838 Td /F1 12.0 Tf  [(Here is a visual representation of such a Segment Tree over the array \\\(a = [1, 3, -2, 8, -7]\\\):)] TJ ET
+endstream
+endobj
+8 0 obj
+<< /Type /Font
+/Subtype /Type1
+/Name /F1
+/BaseFont /Times-Roman
+/Encoding /WinAnsiEncoding
+>>
+endobj
+9 0 obj
+<< /Type /Font
+/Subtype /Type1
+/Name /F2
+/BaseFont /Times-Bold
+/Encoding /WinAnsiEncoding
+>>
+endobj
+10 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 11 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 56.3357 524.3335 235.6277 536.2135 ]
+>>
+endobj
+11 0 obj
+<< /Type /Action
+/S /URI
+/URI (segment_tree.md#advanced-versions-of-segment-trees)
+>>
+endobj
+12 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 13 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 34.0157 97.0139 110.0117 108.8939 ]
+>>
+endobj
+13 0 obj
+<< /Type /Action
+/S /URI
+/URI (segment_tree.md#implementation)
+>>
+endobj
+14 0 obj
+<< /Type /Page
+/Parent 3 0 R
+/Contents 15 0 R
+>>
+endobj
+15 0 obj
+<<
+/Length 5748 >>
+stream
+
+0.000 0.000 0.000 rg
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+BT 34.016 797.074 Td /F1 12.0 Tf  [("Sum Segment Tree")] TJ ET
+0.500 0.500 0.500 rg
+BT 34.016 772.674 Td /F1 8.0 Tf  [(Image not readable or empty)] TJ ET
+BT 34.016 762.674 Td /F1 8.0 Tf  [(sum-segment-tree.png)] TJ ET
+0.000 0.000 0.000 rg
+BT 34.016 736.469 Td /F1 12.0 Tf  [(From this short description of the data structure, we can already conclude that a Segment Tree only requires )] TJ ET
+BT 34.016 722.213 Td /F1 12.0 Tf  [(a linear number of vertices. The first level of the tree contains a single node \(the root\), the second level will )] TJ ET
+BT 34.016 707.957 Td /F1 12.0 Tf  [(contain two vertices, in the third it will contain four vertices, until the number of vertices reaches \\\(n\\\). Thus )] TJ ET
+BT 34.016 693.701 Td /F1 12.0 Tf  [(the number of vertices in the worst case can be estimated by the sum \\\(1 + 2 + 4 + \\dots + 2^{\\lceil\\log_2 )] TJ ET
+BT 34.016 679.445 Td /F1 12.0 Tf  [(n\\rceil} \\lt 2^{\\lceil\\log_2 n\\rceil + 1} \\lt 4n\\\).)] TJ ET
+BT 34.016 653.189 Td /F1 12.0 Tf  [(It is worth noting that whenever \\\(n\\\) is not a power of two, not all levels of the Segment Tree will be )] TJ ET
+BT 34.016 638.933 Td /F1 12.0 Tf  [(completely filled. We can see that behavior in the image. For now we can forget about this fact, but it will )] TJ ET
+BT 34.016 624.677 Td /F1 12.0 Tf  [(become important later during the implementation.)] TJ ET
+BT 34.016 598.421 Td /F1 12.0 Tf  [(The height of the Segment Tree is \\\(O\(\\log n\)\\\), because when going down from the root to the leaves the )] TJ ET
+BT 34.016 584.165 Td /F1 12.0 Tf  [(size of the segments decreases approximately by half.)] TJ ET
+BT 34.016 555.971 Td /F2 14.0 Tf  [(Construction)] TJ ET
+BT 34.016 529.230 Td /F1 12.0 Tf  [(Before constructing the segment tree, we need to decide:)] TJ ET
+BT 48.816 502.979 Td /F1 12.0 Tf  [(1.)] TJ ET
+BT 64.016 502.974 Td /F1 12.0 Tf  [(the )] TJ ET
+BT 81.680 502.974 Td /F3 12.0 Tf  [(value)] TJ ET
+BT 107.672 502.974 Td /F1 12.0 Tf  [( that gets stored at each node of the segment tree. For example, in a sum segment tree, a node )] TJ ET
+BT 64.016 488.718 Td /F1 12.0 Tf  [(would store the sum of the elements in its range \\\([l, r]\\\).)] TJ ET
+BT 48.816 474.467 Td /F1 12.0 Tf  [(2.)] TJ ET
+BT 64.016 474.462 Td /F1 12.0 Tf  [(the )] TJ ET
+BT 81.680 474.462 Td /F3 12.0 Tf  [(merge)] TJ ET
+BT 111.668 474.462 Td /F1 12.0 Tf  [( operation that merges two siblings in a segment tree. For example, in a sum segment tree, )] TJ ET
+BT 64.016 460.206 Td /F1 12.0 Tf  [(the two nodes corresponding to the ranges \\\(a[l_1 \\dots r_1]\\\) and \\\(a[l_2 \\dots r_2]\\\) would be merged )] TJ ET
+BT 64.016 445.950 Td /F1 12.0 Tf  [(into a node corresponding to the range \\\(a[l_1 \\dots r_2]\\\) by adding the values of the two nodes.)] TJ ET
+BT 34.016 419.694 Td /F1 12.0 Tf  [(Note that a vertex is a )] TJ ET
+BT 141.992 419.694 Td /F1 12.0 Tf  [(")] TJ ET
+BT 146.888 419.694 Td /F1 12.0 Tf  [(leaf vertex)] TJ ET
+BT 197.864 419.694 Td /F1 12.0 Tf  [(")] TJ ET
+BT 202.760 419.694 Td /F1 12.0 Tf  [(, if its corresponding segment covers only one value in the original array. )] TJ ET
+BT 34.016 405.438 Td /F1 12.0 Tf  [(It is present at the lowermost level of a segment tree. Its value would be equal to the \(corresponding\) )] TJ ET
+BT 34.016 391.182 Td /F1 12.0 Tf  [(element \\\(a[i]\\\).)] TJ ET
+BT 34.016 364.926 Td /F1 12.0 Tf  [(Now, for construction of the segment tree, we start at the bottom level \(the leaf vertices\) and assign them )] TJ ET
+BT 34.016 350.670 Td /F1 12.0 Tf  [(their respective values. On the basis of these values, we can compute the values of the previous level, using )] TJ ET
+BT 34.016 336.414 Td /F1 12.0 Tf  [(the )] TJ ET
+BT 51.680 336.414 Td /F4 12.0 Tf  [(merge)] TJ ET
+BT 87.680 336.414 Td /F1 12.0 Tf  [( function. And on the basis of those, we can compute the values of the previous, and repeat the )] TJ ET
+BT 34.016 322.158 Td /F1 12.0 Tf  [(procedure until we reach the root vertex.)] TJ ET
+BT 34.016 295.902 Td /F1 12.0 Tf  [(It is convenient to describe this operation recursively in the other direction, i.e., from the root vertex to the )] TJ ET
+BT 34.016 281.646 Td /F1 12.0 Tf  [(leaf vertices. The construction procedure, if called on a non-leaf vertex, does the following:)] TJ ET
+BT 48.816 255.395 Td /F1 12.0 Tf  [(1.)] TJ ET
+BT 64.016 255.390 Td /F1 12.0 Tf  [(recursively construct the values of the two child vertices)] TJ ET
+BT 48.816 241.139 Td /F1 12.0 Tf  [(2.)] TJ ET
+BT 64.016 241.134 Td /F1 12.0 Tf  [(merge the computed values of these children.)] TJ ET
+BT 34.016 214.878 Td /F1 12.0 Tf  [(We start the construction at the root vertex, and hence, we are able to compute the entire segment tree.)] TJ ET
+BT 34.016 188.622 Td /F1 12.0 Tf  [(The time complexity of this construction is \\\(O\(n\)\\\), assuming that the merge operation is constant time \(the )] TJ ET
+BT 34.016 174.366 Td /F1 12.0 Tf  [(merge operation gets called \\\(n\\\) times, which is equal to the number of internal nodes in the segment tree\).)] TJ ET
+BT 34.016 146.171 Td /F2 14.0 Tf  [(Sum queries)] TJ ET
+BT 34.016 119.430 Td /F1 12.0 Tf  [(For now we are going to answer sum queries. As an input we receive two integers \\\(l\\\) and \\\(r\\\), and we have )] TJ ET
+BT 34.016 105.174 Td /F1 12.0 Tf  [(to compute the sum of the segment \\\(a[l \\dots r]\\\) in \\\(O\(\\log n\)\\\) time.)] TJ ET
+BT 34.016 78.918 Td /F1 12.0 Tf  [(To do this, we will traverse the Segment Tree and use the precomputed sums of the segments. Let's assume )] TJ ET
+BT 34.016 64.662 Td /F1 12.0 Tf  [(that we are currently at the vertex that covers the segment \\\(a[tl \\dots tr]\\\). There are three possible cases.)] TJ ET
+endstream
+endobj
+16 0 obj
+<< /Type /Font
+/Subtype /Type1
+/Name /F3
+/BaseFont /Times-Italic
+/Encoding /WinAnsiEncoding
+>>
+endobj
+17 0 obj
+<< /Type /Font
+/Subtype /Type1
+/Name /F4
+/BaseFont /Courier
+/Encoding /WinAnsiEncoding
+>>
+endobj
+18 0 obj
+<< /Type /Page
+/Parent 3 0 R
+/Contents 19 0 R
+>>
+endobj
+19 0 obj
+<<
+/Length 6117 >>
+stream
+
+0.000 0.000 0.000 rg
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+BT 34.016 784.469 Td /F1 12.0 Tf  [(The easiest case is when the segment \\\(a[l \\dots r]\\\) is equal to the corresponding segment of the current )] TJ ET
+BT 34.016 770.213 Td /F1 12.0 Tf  [(vertex \(i.e. \\\(a[l \\dots r] = a[tl \\dots tr]\\\)\), then we are finished and can return the precomputed sum that is )] TJ ET
+BT 34.016 755.957 Td /F1 12.0 Tf  [(stored in the vertex.)] TJ ET
+BT 34.016 729.701 Td /F1 12.0 Tf  [(Alternatively the segment of the query can fall completely into the domain of either the left or the right )] TJ ET
+BT 34.016 715.445 Td /F1 12.0 Tf  [(child. Recall that the left child covers the segment \\\(a[tl \\dots tm]\\\) and the right vertex covers the segment )] TJ ET
+BT 34.016 701.189 Td /F1 12.0 Tf  [(\\\(a[tm + 1 \\dots tr]\\\) with \\\(tm = \(tl + tr\) / 2\\\). In this case we can simply go to the child vertex, which )] TJ ET
+BT 34.016 686.933 Td /F1 12.0 Tf  [(corresponding segment covers the query segment, and execute the algorithm described here with that vertex.)] TJ ET
+BT 34.016 660.677 Td /F1 12.0 Tf  [(And then there is the last case, the query segment intersects with both children. In this case we have no other )] TJ ET
+BT 34.016 646.421 Td /F1 12.0 Tf  [(option as to make two recursive calls, one for each child. First we go to the left child, compute a partial )] TJ ET
+BT 34.016 632.165 Td /F1 12.0 Tf  [(answer for this vertex \(i.e. the sum of values of the intersection between the segment of the query and the )] TJ ET
+BT 34.016 617.909 Td /F1 12.0 Tf  [(segment of the left child\), then go to the right child, compute the partial answer using that vertex, and then )] TJ ET
+BT 34.016 603.653 Td /F1 12.0 Tf  [(combine the answers by adding them. In other words, since the left child represents the segment \\\(a[tl \\dots )] TJ ET
+BT 34.016 589.397 Td /F1 12.0 Tf  [(tm]\\\) and the right child the segment \\\(a[tm+1 \\dots tr]\\\), we compute the sum query \\\(a[l \\dots tm]\\\) using )] TJ ET
+BT 34.016 575.141 Td /F1 12.0 Tf  [(the left child, and the sum query \\\(a[tm+1 \\dots r]\\\) using the right child.)] TJ ET
+BT 34.016 548.885 Td /F1 12.0 Tf  [(So processing a sum query is a function that recursively calls itself once with either the left or the right child )] TJ ET
+BT 34.016 534.629 Td /F1 12.0 Tf  [(\(without changing the query boundaries\), or twice, once for the left and once for the right child \(by splitting )] TJ ET
+BT 34.016 520.373 Td /F1 12.0 Tf  [(the query into two subqueries\). And the recursion ends, whenever the boundaries of the current query )] TJ ET
+BT 34.016 506.117 Td /F1 12.0 Tf  [(segment coincides with the boundaries of the segment of the current vertex. In that case the answer will be )] TJ ET
+BT 34.016 491.861 Td /F1 12.0 Tf  [(the precomputed value of the sum of this segment, which is stored in the tree.)] TJ ET
+BT 34.016 465.605 Td /F1 12.0 Tf  [(In other words, the calculation of the query is a traversal of the tree, which spreads through all necessary )] TJ ET
+BT 34.016 451.349 Td /F1 12.0 Tf  [(branches of the tree, and uses the precomputed sum values of the segments in the tree.)] TJ ET
+BT 34.016 425.093 Td /F1 12.0 Tf  [(Obviously we will start the traversal from the root vertex of the Segment Tree.)] TJ ET
+BT 34.016 398.837 Td /F1 12.0 Tf  [(The procedure is illustrated in the following image. Again the array \\\(a = [1, 3, -2, 8, -7]\\\) is used, and here )] TJ ET
+BT 34.016 384.581 Td /F1 12.0 Tf  [(we want to compute the sum \\\(\\sum_{i=2}^4 a[i]\\\). The colored vertices will be visited, and we will use the )] TJ ET
+BT 34.016 370.325 Td /F1 12.0 Tf  [(precomputed values of the green vertices. This gives us the result \\\(-2 + 1 = -1\\\).)] TJ ET
+BT 34.016 344.674 Td /F1 12.0 Tf  [("Sum Segment Tree Query")] TJ ET
+0.500 0.500 0.500 rg
+BT 34.016 320.274 Td /F1 8.0 Tf  [(Image not readable or empty)] TJ ET
+BT 34.016 310.274 Td /F1 8.0 Tf  [(sum-segment-tree-query.png)] TJ ET
+0.000 0.000 0.000 rg
+BT 34.016 284.069 Td /F1 12.0 Tf  [(Why is the complexity of this algorithm \\\(O\(\\log n\)\\\)? To show this complexity we look at each level of the )] TJ ET
+BT 34.016 269.813 Td /F1 12.0 Tf  [(tree. It turns out, that for each level we only visit not more than four vertices. And since the height of the tree )] TJ ET
+BT 34.016 255.557 Td /F1 12.0 Tf  [(is \\\(O\(\\log n\)\\\), we receive the desired running time.)] TJ ET
+BT 34.016 229.301 Td /F1 12.0 Tf  [(We can show that this proposition \(at most four vertices each level\) is true by induction. At the first level, )] TJ ET
+BT 34.016 215.045 Td /F1 12.0 Tf  [(we only visit one vertex, the root vertex, so here we visit less than four vertices. Now let's look at an )] TJ ET
+BT 34.016 200.789 Td /F1 12.0 Tf  [(arbitrary level. By induction hypothesis, we visit at most four vertices. If we only visit at most two vertices, )] TJ ET
+BT 34.016 186.533 Td /F1 12.0 Tf  [(the next level has at most four vertices. That is trivial, because each vertex can only cause at most two )] TJ ET
+BT 34.016 172.277 Td /F1 12.0 Tf  [(recursive calls. So let's assume that we visit three or four vertices in the current level. From those vertices, )] TJ ET
+BT 34.016 158.021 Td /F1 12.0 Tf  [(we will analyze the vertices in the middle more carefully. Since the sum query asks for the sum of a )] TJ ET
+BT 34.016 143.765 Td /F1 12.0 Tf  [(continuous subarray, we know that segments corresponding to the visited vertices in the middle will be )] TJ ET
+BT 34.016 129.509 Td /F1 12.0 Tf  [(completely covered by the segment of the sum query. Therefore these vertices will not make any recursive )] TJ ET
+BT 34.016 115.253 Td /F1 12.0 Tf  [(calls. So only the most left, and the most right vertex will have the potential to make recursive calls. And )] TJ ET
+BT 34.016 100.997 Td /F1 12.0 Tf  [(those will only create at most four recursive calls, so also the next level will satisfy the assertion. We can say )] TJ ET
+BT 34.016 86.741 Td /F1 12.0 Tf  [(that one branch approaches the left boundary of the query, and the second branch approaches the right one.)] TJ ET
+endstream
+endobj
+20 0 obj
+<< /Type /Page
+/Parent 3 0 R
+/Contents 21 0 R
+>>
+endobj
+21 0 obj
+<<
+/Length 5042 >>
+stream
+
+0.000 0.000 0.000 rg
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+BT 34.016 784.469 Td /F1 12.0 Tf  [(Therefore we visit at most \\\(4 \\log n\\\) vertices in total, and that is equal to a running time of \\\(O\(\\log n\)\\\).)] TJ ET
+BT 34.016 758.213 Td /F1 12.0 Tf  [(In conclusion the query works by dividing the input segment into several sub-segments for which all the )] TJ ET
+BT 34.016 743.957 Td /F1 12.0 Tf  [(sums are already precomputed and stored in the tree. And if we stop partitioning whenever the query )] TJ ET
+BT 34.016 729.701 Td /F1 12.0 Tf  [(segment coincides with the vertex segment, then we only need \\\(O\(\\log n\)\\\) such segments, which gives the )] TJ ET
+BT 34.016 715.445 Td /F1 12.0 Tf  [(effectiveness of the Segment Tree.)] TJ ET
+BT 34.016 687.251 Td /F2 14.0 Tf  [(Update queries)] TJ ET
+BT 34.016 660.510 Td /F1 12.0 Tf  [(Now we want to modify a specific element in the array, let's say we want to do the assignment \\\(a[i] = x\\\). )] TJ ET
+BT 34.016 646.254 Td /F1 12.0 Tf  [(And we have to rebuild the Segment Tree, such that it corresponds to the new, modified array.)] TJ ET
+BT 34.016 619.998 Td /F1 12.0 Tf  [(This query is easier than the sum query. Each level of a Segment Tree forms a partition of the array. )] TJ ET
+BT 34.016 605.742 Td /F1 12.0 Tf  [(Therefore an element \\\(a[i]\\\) only contributes to one segment from each level. Thus only \\\(O\(\\log n\)\\\) )] TJ ET
+BT 34.016 591.486 Td /F1 12.0 Tf  [(vertices need to be updated.)] TJ ET
+BT 34.016 565.230 Td /F1 12.0 Tf  [(It is easy to see, that the update request can be implemented using a recursive function. The function gets )] TJ ET
+BT 34.016 550.974 Td /F1 12.0 Tf  [(passed the current tree vertex, and it recursively calls itself with one of the two child vertices \(the one that )] TJ ET
+BT 34.016 536.718 Td /F1 12.0 Tf  [(contains \\\(a[i]\\\) in its segment\), and after that recomputes its sum value, similar how it is done in the build )] TJ ET
+BT 34.016 522.462 Td /F1 12.0 Tf  [(method \(that is as the sum of its two children\).)] TJ ET
+BT 34.016 496.206 Td /F1 12.0 Tf  [(Again here is a visualization using the same array. Here we perform the update \\\(a[2] = 3\\\). The green )] TJ ET
+BT 34.016 481.950 Td /F1 12.0 Tf  [(vertices are the vertices that we visit and update.)] TJ ET
+BT 34.016 456.299 Td /F1 12.0 Tf  [("Sum Segment Tree Update")] TJ ET
+0.500 0.500 0.500 rg
+BT 34.016 431.899 Td /F1 8.0 Tf  [(Image not readable or empty)] TJ ET
+BT 34.016 421.899 Td /F1 8.0 Tf  [(sum-segment-tree-update.png)] TJ ET
+0.000 0.000 0.000 rg
+BT 34.016 393.755 Td /F2 14.0 Tf  [(Implementation ### { #implementation})] TJ ET
+BT 34.016 367.014 Td /F1 12.0 Tf  [(The main consideration is how to store the Segment Tree. Of course we can define a \\\(\\text{Vertex}\\\) struct )] TJ ET
+BT 34.016 352.758 Td /F1 12.0 Tf  [(and create objects, that store the boundaries of the segment, its sum and additionally also pointers to its child )] TJ ET
+BT 34.016 338.502 Td /F1 12.0 Tf  [(vertices. However, this requires storing a lot of redundant information in the form of pointers. We will use a )] TJ ET
+BT 34.016 324.246 Td /F1 12.0 Tf  [(simple trick to make this a lot more efficient by using an )] TJ ET
+BT 308.660 324.246 Td /F1 12.0 Tf  [(implicit data structure)] TJ ET
+0.000 0.000 0.000 RG
+0.6 w 0 J [  ] 0 d
+308.660 321.546 m 413.984 321.546 l S
+BT 413.984 324.246 Td /F1 12.0 Tf  [(: Only storing the sums in an )] TJ ET
+BT 34.016 309.990 Td /F1 12.0 Tf  [(array. \(A similar method is used for binary heaps\). The sum of the root vertex at index 1, the sums of its two )] TJ ET
+BT 34.016 295.734 Td /F1 12.0 Tf  [(child vertices at indices 2 and 3, the sums of the children of those two vertices at indices 4 to 7, and so on. )] TJ ET
+BT 34.016 281.478 Td /F1 12.0 Tf  [(With 1-indexing, conveniently the left child of a vertex at index \\\(i\\\) is stored at index \\\(2i\\\), and the right )] TJ ET
+BT 34.016 267.222 Td /F1 12.0 Tf  [(one at index \\\(2i + 1\\\). Equivalently, the parent of a vertex at index \\\(i\\\) is stored at \\\(i/2\\\) \(integer division\).)] TJ ET
+BT 34.016 240.966 Td /F1 12.0 Tf  [(This simplifies the implementation a lot. We don't need to store the structure of the tree in memory. It is )] TJ ET
+BT 34.016 226.710 Td /F1 12.0 Tf  [(defined implicitly. We only need one array which contains the sums of all segments.)] TJ ET
+BT 34.016 200.454 Td /F1 12.0 Tf  [(As noted before, we need to store at most \\\(4n\\\) vertices. It might be less, but for convenience we always )] TJ ET
+BT 34.016 186.198 Td /F1 12.0 Tf  [(allocate an array of size \\\(4n\\\). There will be some elements in the sum array, that will not correspond to any )] TJ ET
+BT 34.016 171.942 Td /F1 12.0 Tf  [(vertices in the actual tree, but this doesn't complicate the implementation.)] TJ ET
+BT 34.016 145.686 Td /F1 12.0 Tf  [(So, we store the Segment Tree simply as an array \\\(t[]\\\) with a size of four times the input size \\\(n\\\):)] TJ ET
+BT 34.016 120.875 Td /F4 12.0 Tf  [(int n, t[4*MAXN];)] TJ ET
+endstream
+endobj
+22 0 obj
+<< /Type /Page
+/Parent 3 0 R
+/Contents 23 0 R
+>>
+endobj
+23 0 obj
+<<
+/Length 4131 >>
+stream
+
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+0.6 w 0 J [  ] 0 d
+BT 34.016 784.469 Td /F1 12.0 Tf  [(The procedure for constructing the Segment Tree from a given array \\\(a[]\\\) looks like this: it is a recursive )] TJ ET
+BT 34.016 770.213 Td /F1 12.0 Tf  [(function with the parameters \\\(a[]\\\) \(the input array\), \\\(v\\\) \(the index of the current vertex\), and the )] TJ ET
+BT 34.016 755.957 Td /F1 12.0 Tf  [(boundaries \\\(tl\\\) and \\\(tr\\\) of the current segment. In the main program this function will be called with the )] TJ ET
+BT 34.016 741.701 Td /F1 12.0 Tf  [(parameters of the root vertex: \\\(v = 1\\\), \\\(tl = 0\\\), and \\\(tr = n - 1\\\).)] TJ ET
+BT 34.016 716.890 Td /F4 12.0 Tf  [(void build\(int a[], int v, int tl, int tr\) {)] TJ ET
+BT 34.016 704.440 Td /F4 12.0 Tf  [(    if \(tl == tr\) {)] TJ ET
+BT 34.016 691.990 Td /F4 12.0 Tf  [(        t[v] = a[tl];)] TJ ET
+BT 34.016 679.539 Td /F4 12.0 Tf  [(    } else {)] TJ ET
+BT 34.016 667.089 Td /F4 12.0 Tf  [(        int tm = \(tl + tr\) / 2;)] TJ ET
+BT 34.016 654.639 Td /F4 12.0 Tf  [(        build\(a, v*2, tl, tm\);)] TJ ET
+BT 34.016 642.189 Td /F4 12.0 Tf  [(        build\(a, v*2+1, tm+1, tr\);)] TJ ET
+BT 34.016 629.738 Td /F4 12.0 Tf  [(        t[v] = t[v*2] + t[v*2+1];)] TJ ET
+BT 34.016 617.288 Td /F4 12.0 Tf  [(    })] TJ ET
+BT 34.016 604.838 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 578.943 Td /F1 12.0 Tf  [(Further the function for answering sum queries is also a recursive function, which receives as parameters )] TJ ET
+BT 34.016 564.687 Td /F1 12.0 Tf  [(information about the current vertex/segment \(i.e. the index \\\(v\\\) and the boundaries \\\(tl\\\) and \\\(tr\\\)\) and also )] TJ ET
+BT 34.016 550.431 Td /F1 12.0 Tf  [(the information about the boundaries of the query, \\\(l\\\) and \\\(r\\\). In order to simplify the code, this function )] TJ ET
+BT 34.016 536.175 Td /F1 12.0 Tf  [(always does two recursive calls, even if only one is necessary - in that case the superfluous recursive call )] TJ ET
+BT 34.016 521.919 Td /F1 12.0 Tf  [(will have \\\(l > r\\\), and this can easily be caught using an additional check at the beginning of the function.)] TJ ET
+BT 34.016 497.108 Td /F4 12.0 Tf  [(int sum\(int v, int tl, int tr, int l, int r\) {)] TJ ET
+BT 34.016 484.657 Td /F4 12.0 Tf  [(    if \(l > r\))] TJ ET
+BT 34.016 472.207 Td /F4 12.0 Tf  [(        return 0;)] TJ ET
+BT 34.016 459.757 Td /F4 12.0 Tf  [(    if \(l == tl && r == tr\) {)] TJ ET
+BT 34.016 447.307 Td /F4 12.0 Tf  [(        return t[v];)] TJ ET
+BT 34.016 434.856 Td /F4 12.0 Tf  [(    })] TJ ET
+BT 34.016 422.406 Td /F4 12.0 Tf  [(    int tm = \(tl + tr\) / 2;)] TJ ET
+BT 34.016 409.956 Td /F4 12.0 Tf  [(    return sum\(v*2, tl, tm, l, min\(r, tm\)\))] TJ ET
+BT 34.016 397.506 Td /F4 12.0 Tf  [(           + sum\(v*2+1, tm+1, tr, max\(l, tm+1\), r\);)] TJ ET
+BT 34.016 385.055 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 359.161 Td /F1 12.0 Tf  [(Finally the update query. The function will also receive information about the current vertex/segment, and )] TJ ET
+BT 34.016 344.905 Td /F1 12.0 Tf  [(additionally also the parameter of the update query \(i.e. the position of the element and its new value\).)] TJ ET
+BT 34.016 320.093 Td /F4 12.0 Tf  [(void update\(int v, int tl, int tr, int pos, int new_val\) {)] TJ ET
+BT 34.016 307.643 Td /F4 12.0 Tf  [(    if \(tl == tr\) {)] TJ ET
+BT 34.016 295.193 Td /F4 12.0 Tf  [(        t[v] = new_val;)] TJ ET
+BT 34.016 282.743 Td /F4 12.0 Tf  [(    } else {)] TJ ET
+BT 34.016 270.292 Td /F4 12.0 Tf  [(        int tm = \(tl + tr\) / 2;)] TJ ET
+BT 34.016 257.842 Td /F4 12.0 Tf  [(        if \(pos <= tm\))] TJ ET
+BT 34.016 245.392 Td /F4 12.0 Tf  [(            update\(v*2, tl, tm, pos, new_val\);)] TJ ET
+BT 34.016 232.942 Td /F4 12.0 Tf  [(        else)] TJ ET
+BT 34.016 220.491 Td /F4 12.0 Tf  [(            update\(v*2+1, tm+1, tr, pos, new_val\);)] TJ ET
+BT 34.016 208.041 Td /F4 12.0 Tf  [(        t[v] = t[v*2] + t[v*2+1];)] TJ ET
+BT 34.016 195.591 Td /F4 12.0 Tf  [(    })] TJ ET
+BT 34.016 183.141 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 155.307 Td /F2 14.0 Tf  [(Memory efficient implementation)] TJ ET
+endstream
+endobj
+24 0 obj
+<< /Type /Page
+/Parent 3 0 R
+/Contents 25 0 R
+>>
+endobj
+25 0 obj
+<<
+/Length 5254 >>
+stream
+
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+0.6 w 0 J [  ] 0 d
+BT 34.016 784.469 Td /F1 12.0 Tf  [(Most people use the implementation from the previous section. If you look at the array )] TJ ET
+BT 453.296 784.469 Td /F4 12.0 Tf  [(t)] TJ ET
+BT 460.496 784.469 Td /F1 12.0 Tf  [( you can see that it )] TJ ET
+BT 34.016 770.213 Td /F1 12.0 Tf  [(follows the numbering of the tree nodes in the order of a BFS traversal \(level-order traversal\). Using this )] TJ ET
+BT 34.016 755.957 Td /F1 12.0 Tf  [(traversal the children of vertex \\\(v\\\) are \\\(2v\\\) and \\\(2v + 1\\\) respectively. However if \\\(n\\\) is not a power of )] TJ ET
+BT 34.016 741.701 Td /F1 12.0 Tf  [(two, this method will skip some indices and leave some parts of the array )] TJ ET
+BT 388.976 741.701 Td /F4 12.0 Tf  [(t)] TJ ET
+BT 396.176 741.701 Td /F1 12.0 Tf  [( unused. The memory )] TJ ET
+BT 34.016 727.445 Td /F1 12.0 Tf  [(consumption is limited by \\\(4n\\\), even though a Segment Tree of an array of \\\(n\\\) elements requires only )] TJ ET
+BT 34.016 713.189 Td /F1 12.0 Tf  [(\\\(2n - 1\\\) vertices.)] TJ ET
+BT 34.016 686.933 Td /F1 12.0 Tf  [(However it can be reduced. We renumber the vertices of the tree in the order of an Euler tour traversal \(pre-)] TJ ET
+BT 34.016 672.677 Td /F1 12.0 Tf  [(order traversal\), and we write all these vertices next to each other.)] TJ ET
+BT 34.016 646.421 Td /F1 12.0 Tf  [(Let's look at a vertex at index \\\(v\\\), and let it be responsible for the segment \\\([l, r]\\\), and let \\\(mid = \\dfrac{l )] TJ ET
+BT 34.016 632.165 Td /F1 12.0 Tf  [(+ r}{2}\\\). It is obvious that the left child will have the index \\\(v + 1\\\). The left child is responsible for the )] TJ ET
+BT 34.016 617.909 Td /F1 12.0 Tf  [(segment \\\([l, mid]\\\), i.e. in total there will be \\\(2 * \(mid - l + 1\) - 1\\\) vertices in the left child's subtree. Thus )] TJ ET
+BT 34.016 603.653 Td /F1 12.0 Tf  [(we can compute the index of the right child of \\\(v\\\). The index will be \\\(v + 2 * \(mid - l + 1\)\\\). By this )] TJ ET
+BT 34.016 589.397 Td /F1 12.0 Tf  [(numbering we achieve a reduction of the necessary memory to \\\(2n\\\).)] TJ ET
+BT 34.016 554.499 Td /F2 18.0 Tf  [(Advanced versions of Segment Trees)] TJ ET
+BT 34.016 523.877 Td /F1 12.0 Tf  [(A Segment Tree is a very flexible data structure, and allows variations and extensions in many different )] TJ ET
+BT 34.016 509.621 Td /F1 12.0 Tf  [(directions. Let's try to categorize them below.)] TJ ET
+BT 34.016 481.427 Td /F2 14.0 Tf  [(More complex queries)] TJ ET
+BT 34.016 454.686 Td /F1 12.0 Tf  [(It can be quite easy to change the Segment Tree in a direction, such that it computes different queries \(e.g. )] TJ ET
+BT 34.016 440.430 Td /F1 12.0 Tf  [(computing the minimum / maximum instead of the sum\), but it also can be very nontrivial.)] TJ ET
+BT 34.016 410.214 Td /F2 12.0 Tf  [(Finding the maximum)] TJ ET
+BT 34.016 379.998 Td /F1 12.0 Tf  [(Let us slightly change the condition of the problem described above: instead of querying the sum, we will )] TJ ET
+BT 34.016 365.742 Td /F1 12.0 Tf  [(now make maximum queries.)] TJ ET
+BT 34.016 339.486 Td /F1 12.0 Tf  [(The tree will have exactly the same structure as the tree described above. We only need to change the way )] TJ ET
+BT 34.016 325.230 Td /F1 12.0 Tf  [(\\\(t[v]\\\) is computed in the \\\(\\text{build}\\\) and \\\(\\text{update}\\\) functions. \\\(t[v]\\\) will now store the )] TJ ET
+BT 34.016 310.974 Td /F1 12.0 Tf  [(maximum of the corresponding segment. And we also need to change the calculation of the returned value of )] TJ ET
+BT 34.016 296.718 Td /F1 12.0 Tf  [(the \\\(\\text{sum}\\\) function \(replacing the summation by the maximum\).)] TJ ET
+BT 34.016 270.462 Td /F1 12.0 Tf  [(Of course this problem can be easily changed into computing the minimum instead of the maximum.)] TJ ET
+BT 34.016 244.206 Td /F1 12.0 Tf  [(Instead of showing an implementation to this problem, the implementation will be given to a more complex )] TJ ET
+BT 34.016 229.950 Td /F1 12.0 Tf  [(version of this problem in the next section.)] TJ ET
+BT 34.016 199.734 Td /F2 12.0 Tf  [(Finding the maximum and the number of times it appears)] TJ ET
+BT 34.016 169.518 Td /F1 12.0 Tf  [(This task is very similar to the previous one. In addition of finding the maximum, we also have to find the )] TJ ET
+BT 34.016 155.262 Td /F1 12.0 Tf  [(number of occurrences of the maximum.)] TJ ET
+BT 34.016 129.006 Td /F1 12.0 Tf  [(To solve this problem, we store a pair of numbers at each vertex in the tree: In addition to the maximum we )] TJ ET
+BT 34.016 114.750 Td /F1 12.0 Tf  [(also store the number of occurrences of it in the corresponding segment. Determining the correct pair to )] TJ ET
+BT 34.016 100.494 Td /F1 12.0 Tf  [(store at \\\(t[v]\\\) can still be done in constant time using the information of the pairs stored at the child )] TJ ET
+BT 34.016 86.238 Td /F1 12.0 Tf  [(vertices. Combining two such pairs should be done in a separate function, since this will be an operation that )] TJ ET
+BT 34.016 71.982 Td /F1 12.0 Tf  [(we will do while building the tree, while answering maximum queries and while performing modifications.)] TJ ET
+BT 34.016 47.171 Td /F4 12.0 Tf  [(pair<int, int> t[4*MAXN];)] TJ ET
+endstream
+endobj
+26 0 obj
+<< /Type /Page
+/Parent 3 0 R
+/Contents 27 0 R
+>>
+endobj
+27 0 obj
+<<
+/Length 4343 >>
+stream
+
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+0.6 w 0 J [  ] 0 d
+BT 34.016 797.914 Td /F4 12.0 Tf  [(pair<int, int> combine\(pair<int, int> a, pair<int, int> b\) {)] TJ ET
+BT 34.016 785.464 Td /F4 12.0 Tf  [(    if \(a.first > b.first\))] TJ ET
+BT 34.016 773.014 Td /F4 12.0 Tf  [(        return a;)] TJ ET
+BT 34.016 760.563 Td /F4 12.0 Tf  [(    if \(b.first > a.first\))] TJ ET
+BT 34.016 748.113 Td /F4 12.0 Tf  [(        return b;)] TJ ET
+BT 34.016 735.663 Td /F4 12.0 Tf  [(    return make_pair\(a.first, a.second + b.second\);)] TJ ET
+BT 34.016 723.213 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 710.762 Td /F4 12.0 Tf  [(void build\(int a[], int v, int tl, int tr\) {)] TJ ET
+BT 34.016 698.312 Td /F4 12.0 Tf  [(    if \(tl == tr\) {)] TJ ET
+BT 34.016 685.862 Td /F4 12.0 Tf  [(        t[v] = make_pair\(a[tl], 1\);)] TJ ET
+BT 34.016 673.412 Td /F4 12.0 Tf  [(    } else {)] TJ ET
+BT 34.016 660.961 Td /F4 12.0 Tf  [(        int tm = \(tl + tr\) / 2;)] TJ ET
+BT 34.016 648.511 Td /F4 12.0 Tf  [(        build\(a, v*2, tl, tm\);)] TJ ET
+BT 34.016 636.061 Td /F4 12.0 Tf  [(        build\(a, v*2+1, tm+1, tr\);)] TJ ET
+BT 34.016 623.611 Td /F4 12.0 Tf  [(        t[v] = combine\(t[v*2], t[v*2+1]\);)] TJ ET
+BT 34.016 611.160 Td /F4 12.0 Tf  [(    })] TJ ET
+BT 34.016 598.710 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 586.260 Td /F4 12.0 Tf  [(pair<int, int> get_max\(int v, int tl, int tr, int l, int r\) {)] TJ ET
+BT 34.016 573.810 Td /F4 12.0 Tf  [(    if \(l > r\))] TJ ET
+BT 34.016 561.359 Td /F4 12.0 Tf  [(        return make_pair\(-INF, 0\);)] TJ ET
+BT 34.016 548.909 Td /F4 12.0 Tf  [(    if \(l == tl && r == tr\))] TJ ET
+BT 34.016 536.459 Td /F4 12.0 Tf  [(        return t[v];)] TJ ET
+BT 34.016 524.009 Td /F4 12.0 Tf  [(    int tm = \(tl + tr\) / 2;)] TJ ET
+BT 34.016 511.559 Td /F4 12.0 Tf  [(    return combine\(get_max\(v*2, tl, tm, l, min\(r, tm\)\),)] TJ ET
+BT 34.016 499.108 Td /F4 12.0 Tf  [(                   get_max\(v*2+1, tm+1, tr, max\(l, tm+1\), r\)\);)] TJ ET
+BT 34.016 486.658 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 474.208 Td /F4 12.0 Tf  [(void update\(int v, int tl, int tr, int pos, int new_val\) {)] TJ ET
+BT 34.016 461.758 Td /F4 12.0 Tf  [(    if \(tl == tr\) {)] TJ ET
+BT 34.016 449.307 Td /F4 12.0 Tf  [(        t[v] = make_pair\(new_val, 1\);)] TJ ET
+BT 34.016 436.857 Td /F4 12.0 Tf  [(    } else {)] TJ ET
+BT 34.016 424.407 Td /F4 12.0 Tf  [(        int tm = \(tl + tr\) / 2;)] TJ ET
+BT 34.016 411.957 Td /F4 12.0 Tf  [(        if \(pos <= tm\))] TJ ET
+BT 34.016 399.506 Td /F4 12.0 Tf  [(            update\(v*2, tl, tm, pos, new_val\);)] TJ ET
+BT 34.016 387.056 Td /F4 12.0 Tf  [(        else)] TJ ET
+BT 34.016 374.606 Td /F4 12.0 Tf  [(            update\(v*2+1, tm+1, tr, pos, new_val\);)] TJ ET
+BT 34.016 362.156 Td /F4 12.0 Tf  [(        t[v] = combine\(t[v*2], t[v*2+1]\);)] TJ ET
+BT 34.016 349.705 Td /F4 12.0 Tf  [(    })] TJ ET
+BT 34.016 337.255 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 307.400 Td /F2 12.0 Tf  [(Compute the greatest common divisor / least common multiple)] TJ ET
+BT 34.016 277.184 Td /F1 12.0 Tf  [(In this problem we want to compute the GCD / LCM of all numbers of given ranges of the array.)] TJ ET
+BT 34.016 250.928 Td /F1 12.0 Tf  [(This interesting variation of the Segment Tree can be solved in exactly the same way as the Segment Trees )] TJ ET
+BT 34.016 236.672 Td /F1 12.0 Tf  [(we derived for sum / minimum / maximum queries: it is enough to store the GCD / LCM of the )] TJ ET
+BT 34.016 222.416 Td /F1 12.0 Tf  [(corresponding vertex in each vertex of the tree. Combining two vertices can be done by computing the GCD )] TJ ET
+BT 34.016 208.160 Td /F1 12.0 Tf  [(/ LCM of both vertices.)] TJ ET
+BT 34.016 177.944 Td /F2 12.0 Tf  [(Counting the number of zeros, searching for the \\\(k\\\)-th zero { #counting-zero-search-kth data-toc-)] TJ ET
+BT 34.016 163.688 Td /F2 12.0 Tf  [(label=)] TJ ET
+BT 65.528 163.688 Td /F2 12.0 Tf  [(")] TJ ET
+BT 72.188 163.688 Td /F2 12.0 Tf  [(Counting the number of zeros, searching for the k-th zero)] TJ ET
+BT 367.484 163.688 Td /F2 12.0 Tf  [(")] TJ ET
+BT 374.144 163.688 Td /F2 12.0 Tf  [(})] TJ ET
+BT 34.016 133.472 Td /F1 12.0 Tf  [(In this problem we want to find the number of zeros in a given range, and additionally find the index of the )] TJ ET
+BT 34.016 119.216 Td /F1 12.0 Tf  [(\\\(k\\\)-th zero using a second function.)] TJ ET
+endstream
+endobj
+28 0 obj
+<< /Type /Page
+/Parent 3 0 R
+/Contents 29 0 R
+>>
+endobj
+29 0 obj
+<<
+/Length 4998 >>
+stream
+
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+0.6 w 0 J [  ] 0 d
+BT 34.016 784.469 Td /F1 12.0 Tf  [(Again we have to change the store values of the tree a bit: This time we will store the number of zeros in )] TJ ET
+BT 34.016 770.213 Td /F1 12.0 Tf  [(each segment in \\\(t[]\\\). It is pretty clear, how to implement the \\\(\\text{build}\\\), \\\(\\text{update}\\\) and )] TJ ET
+BT 34.016 755.957 Td /F1 12.0 Tf  [(\\\(\\text{count_zero}\\\) functions, we can simply use the ideas from the sum query problem. Thus we solved )] TJ ET
+BT 34.016 741.701 Td /F1 12.0 Tf  [(the first part of the problem.)] TJ ET
+BT 34.016 715.445 Td /F1 12.0 Tf  [(Now we learn how to solve the problem of finding the \\\(k\\\)-th zero in the array \\\(a[]\\\). To do this task, we )] TJ ET
+BT 34.016 701.189 Td /F1 12.0 Tf  [(will descend the Segment Tree, starting at the root vertex, and moving each time to either the left or the right )] TJ ET
+BT 34.016 686.933 Td /F1 12.0 Tf  [(child, depending on which segment contains the \\\(k\\\)-th zero. In order to decide to which child we need to )] TJ ET
+BT 34.016 672.677 Td /F1 12.0 Tf  [(go, it is enough to look at the number of zeros appearing in the segment corresponding to the left vertex. If )] TJ ET
+BT 34.016 658.421 Td /F1 12.0 Tf  [(this precomputed count is greater or equal to \\\(k\\\), it is necessary to descend to the left child, and otherwise )] TJ ET
+BT 34.016 644.165 Td /F1 12.0 Tf  [(descent to the right child. Notice, if we chose the right child, we have to subtract the number of zeros of the )] TJ ET
+BT 34.016 629.909 Td /F1 12.0 Tf  [(left child from \\\(k\\\).)] TJ ET
+BT 34.016 603.653 Td /F1 12.0 Tf  [(In the implementation we can handle the special case, \\\(a[]\\\) containing less than \\\(k\\\) zeros, by returning -1.)] TJ ET
+BT 34.016 578.842 Td /F4 12.0 Tf  [(int find_kth\(int v, int tl, int tr, int k\) {)] TJ ET
+BT 34.016 566.392 Td /F4 12.0 Tf  [(    if \(k > t[v]\))] TJ ET
+BT 34.016 553.942 Td /F4 12.0 Tf  [(        return -1;)] TJ ET
+BT 34.016 541.491 Td /F4 12.0 Tf  [(    if \(tl == tr\))] TJ ET
+BT 34.016 529.041 Td /F4 12.0 Tf  [(        return tl;)] TJ ET
+BT 34.016 516.591 Td /F4 12.0 Tf  [(    int tm = \(tl + tr\) / 2;)] TJ ET
+BT 34.016 504.141 Td /F4 12.0 Tf  [(    if \(t[v*2] >= k\))] TJ ET
+BT 34.016 491.690 Td /F4 12.0 Tf  [(        return find_kth\(v*2, tl, tm, k\);)] TJ ET
+BT 34.016 479.240 Td /F4 12.0 Tf  [(    else)] TJ ET
+BT 34.016 466.790 Td /F4 12.0 Tf  [(        return find_kth\(v*2+1, tm+1, tr, k - t[v*2]\);)] TJ ET
+BT 34.016 454.340 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 424.485 Td /F2 12.0 Tf  [(Searching for an array prefix with a given amount)] TJ ET
+BT 34.016 394.269 Td /F1 12.0 Tf  [(The task is as follows: for a given value \\\(x\\\) we have to quickly find smallest index \\\(i\\\) such that the sum of )] TJ ET
+BT 34.016 380.013 Td /F1 12.0 Tf  [(the first \\\(i\\\) elements of the array \\\(a[]\\\) is greater or equal to \\\(x\\\) \(assuming that the array \\\(a[]\\\) only )] TJ ET
+BT 34.016 365.757 Td /F1 12.0 Tf  [(contains non-negative values\).)] TJ ET
+BT 34.016 339.501 Td /F1 12.0 Tf  [(This task can be solved using binary search, computing the sum of the prefixes with the Segment Tree. )] TJ ET
+BT 34.016 325.245 Td /F1 12.0 Tf  [(However this will lead to a \\\(O\(\\log^2 n\)\\\) solution.)] TJ ET
+BT 34.016 298.989 Td /F1 12.0 Tf  [(Instead we can use the same idea as in the previous section, and find the position by descending the tree: by )] TJ ET
+BT 34.016 284.733 Td /F1 12.0 Tf  [(moving each time to the left or the right, depending on the sum of the left child. Thus finding the answer in )] TJ ET
+BT 34.016 270.477 Td /F1 12.0 Tf  [(\\\(O\(\\log n\)\\\) time.)] TJ ET
+BT 34.016 240.261 Td /F2 12.0 Tf  [(Searching for the first element greater than a given amount)] TJ ET
+BT 34.016 210.045 Td /F1 12.0 Tf  [(The task is as follows: for a given value \\\(x\\\) and a range \\\(a[l \\dots r]\\\) find the smallest \\\(i\\\) in the range )] TJ ET
+BT 34.016 195.789 Td /F1 12.0 Tf  [(\\\(a[l \\dots r]\\\), such that \\\(a[i]\\\) is greater than \\\(x\\\).)] TJ ET
+BT 34.016 169.533 Td /F1 12.0 Tf  [(This task can be solved using binary search over max prefix queries with the Segment Tree. However, this )] TJ ET
+BT 34.016 155.277 Td /F1 12.0 Tf  [(will lead to a \\\(O\(\\log^2 n\)\\\) solution.)] TJ ET
+BT 34.016 129.021 Td /F1 12.0 Tf  [(Instead, we can use the same idea as in the previous sections, and find the position by descending the tree: )] TJ ET
+BT 34.016 114.765 Td /F1 12.0 Tf  [(by moving each time to the left or the right, depending on the maximum value of the left child. Thus finding )] TJ ET
+BT 34.016 100.509 Td /F1 12.0 Tf  [(the answer in \\\(O\(\\log n\)\\\) time.)] TJ ET
+BT 34.016 75.697 Td /F4 12.0 Tf  [(int get_first\(int v, int tl, int tr, int l, int r, int x\) {)] TJ ET
+BT 34.016 63.247 Td /F4 12.0 Tf  [(    if\(tl > r || tr < l\) return -1;)] TJ ET
+BT 34.016 50.797 Td /F4 12.0 Tf  [(    if\(t[v] <= x\) return -1;)] TJ ET
+endstream
+endobj
+30 0 obj
+<< /Type /Page
+/Parent 3 0 R
+/Contents 31 0 R
+>>
+endobj
+31 0 obj
+<<
+/Length 6295 >>
+stream
+
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+0.6 w 0 J [  ] 0 d
+BT 34.016 797.914 Td /F4 12.0 Tf  [(    if \(tl== tr\) return tl;)] TJ ET
+BT 34.016 785.464 Td /F4 12.0 Tf  [(    int tm = tl + \(tr-tl\)/2;)] TJ ET
+BT 34.016 773.014 Td /F4 12.0 Tf  [(    int left = get_first\(2*v, tl, tm, l, r, x\);)] TJ ET
+BT 34.016 760.563 Td /F4 12.0 Tf  [(    if\(left != -1\) return left;)] TJ ET
+BT 34.016 748.113 Td /F4 12.0 Tf  [(    return get_first\(2*v+1, tm+1, tr, l ,r, x\);)] TJ ET
+BT 34.016 735.663 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 705.808 Td /F2 12.0 Tf  [(Finding subsegments with the maximal sum)] TJ ET
+BT 34.016 675.592 Td /F1 12.0 Tf  [(Here again we receive a range \\\(a[l \\dots r]\\\) for each query, this time we have to find a subsegment )] TJ ET
+BT 34.016 661.336 Td /F1 12.0 Tf  [(\\\(a[l^\\prime \\dots r^\\prime]\\\) such that \\\(l \\le l^\\prime\\\) and \\\(r^\\prime \\le r\\\) and the sum of the elements of )] TJ ET
+BT 34.016 647.080 Td /F1 12.0 Tf  [(this segment is maximal. As before we also want to be able to modify individual elements of the array. The )] TJ ET
+BT 34.016 632.824 Td /F1 12.0 Tf  [(elements of the array can be negative, and the optimal subsegment can be empty \(e.g. if all elements are )] TJ ET
+BT 34.016 618.568 Td /F1 12.0 Tf  [(negative\).)] TJ ET
+BT 34.016 592.312 Td /F1 12.0 Tf  [(This problem is a non-trivial usage of a Segment Tree. This time we will store four values for each vertex: )] TJ ET
+BT 34.016 578.056 Td /F1 12.0 Tf  [(the sum of the segment, the maximum prefix sum, the maximum suffix sum, and the sum of the maximal )] TJ ET
+BT 34.016 563.800 Td /F1 12.0 Tf  [(subsegment in it. In other words for each segment of the Segment Tree the answer is already precomputed as )] TJ ET
+BT 34.016 549.544 Td /F1 12.0 Tf  [(well as the answers for segments touching the left and the right boundaries of the segment.)] TJ ET
+BT 34.016 523.288 Td /F1 12.0 Tf  [(How to build a tree with such data? Again we compute it in a recursive fashion: we first compute all four )] TJ ET
+BT 34.016 509.032 Td /F1 12.0 Tf  [(values for the left and the right child, and then combine those to archive the four values for the current )] TJ ET
+BT 34.016 494.776 Td /F1 12.0 Tf  [(vertex. Note the answer for the current vertex is either:)] TJ ET
+57.816 471.625 m 
+57.816 472.175 57.589 472.721 57.201 473.110 c
+56.812 473.498 56.266 473.725 55.716 473.725 c
+55.166 473.725 54.620 473.498 54.231 473.110 c
+53.842 472.721 53.616 472.175 53.616 471.625 c
+53.616 471.075 53.842 470.529 54.231 470.140 c
+54.620 469.751 55.166 469.525 55.716 469.525 c
+56.266 469.525 56.812 469.751 57.201 470.140 c
+57.589 470.529 57.816 471.075 57.816 471.625 c f
+BT 64.016 468.520 Td /F1 12.0 Tf  [(the answer of the left child, which means that the optimal subsegment is entirely placed in the segment )] TJ ET
+BT 64.016 454.264 Td /F1 12.0 Tf  [(of the left child)] TJ ET
+57.816 443.113 m 
+57.816 443.663 57.589 444.209 57.201 444.598 c
+56.812 444.986 56.266 445.213 55.716 445.213 c
+55.166 445.213 54.620 444.986 54.231 444.598 c
+53.842 444.209 53.616 443.663 53.616 443.113 c
+53.616 442.563 53.842 442.017 54.231 441.628 c
+54.620 441.239 55.166 441.013 55.716 441.013 c
+56.266 441.013 56.812 441.239 57.201 441.628 c
+57.589 442.017 57.816 442.563 57.816 443.113 c f
+BT 64.016 440.008 Td /F1 12.0 Tf  [(the answer of the right child, which means that the optimal subsegment is entirely placed in the )] TJ ET
+BT 64.016 425.752 Td /F1 12.0 Tf  [(segment of the right child)] TJ ET
+57.816 414.601 m 
+57.816 415.151 57.589 415.697 57.201 416.086 c
+56.812 416.474 56.266 416.701 55.716 416.701 c
+55.166 416.701 54.620 416.474 54.231 416.086 c
+53.842 415.697 53.616 415.151 53.616 414.601 c
+53.616 414.051 53.842 413.505 54.231 413.116 c
+54.620 412.727 55.166 412.501 55.716 412.501 c
+56.266 412.501 56.812 412.727 57.201 413.116 c
+57.589 413.505 57.816 414.051 57.816 414.601 c f
+BT 64.016 411.496 Td /F1 12.0 Tf  [(the sum of the maximum suffix sum of the left child and the maximum prefix sum of the right child, )] TJ ET
+BT 64.016 397.240 Td /F1 12.0 Tf  [(which means that the optimal subsegment intersects with both children.)] TJ ET
+BT 34.016 370.984 Td /F1 12.0 Tf  [(Hence the answer to the current vertex is the maximum of these three values. Computing the maximum )] TJ ET
+BT 34.016 356.728 Td /F1 12.0 Tf  [(prefix / suffix sum is even easier. Here is the implementation of the \\\(\\text{combine}\\\) function, which )] TJ ET
+BT 34.016 342.472 Td /F1 12.0 Tf  [(receives only data from the left and right child, and returns the data of the current vertex.)] TJ ET
+BT 34.016 317.661 Td /F4 12.0 Tf  [(struct data {)] TJ ET
+BT 34.016 305.210 Td /F4 12.0 Tf  [(    int sum, pref, suff, ans;)] TJ ET
+BT 34.016 292.760 Td /F4 12.0 Tf  [(};)] TJ ET
+BT 34.016 280.310 Td /F4 12.0 Tf  [(data combine\(data l, data r\) {)] TJ ET
+BT 34.016 267.860 Td /F4 12.0 Tf  [(    data res;)] TJ ET
+BT 34.016 255.409 Td /F4 12.0 Tf  [(    res.sum = l.sum + r.sum;)] TJ ET
+BT 34.016 242.959 Td /F4 12.0 Tf  [(    res.pref = max\(l.pref, l.sum + r.pref\);)] TJ ET
+BT 34.016 230.509 Td /F4 12.0 Tf  [(    res.suff = max\(r.suff, r.sum + l.suff\);)] TJ ET
+BT 34.016 218.059 Td /F4 12.0 Tf  [(    res.ans = max\(max\(l.ans, r.ans\), l.suff + r.pref\);)] TJ ET
+BT 34.016 205.608 Td /F4 12.0 Tf  [(    return res;)] TJ ET
+BT 34.016 193.158 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 167.263 Td /F1 12.0 Tf  [(Using the \\\(\\text{combine}\\\) function it is easy to build the Segment Tree. We can implement it in exactly )] TJ ET
+BT 34.016 153.007 Td /F1 12.0 Tf  [(the same way as in the previous implementations. To initialize the leaf vertices, we additionally create the )] TJ ET
+BT 34.016 138.751 Td /F1 12.0 Tf  [(auxiliary function \\\(\\text{make_data}\\\), which will return a \\\(\\text{data}\\\) object holding the information of )] TJ ET
+BT 34.016 124.495 Td /F1 12.0 Tf  [(a single value.)] TJ ET
+BT 34.016 99.684 Td /F4 12.0 Tf  [(data make_data\(int val\) {)] TJ ET
+BT 34.016 87.234 Td /F4 12.0 Tf  [(    data res;)] TJ ET
+BT 34.016 74.783 Td /F4 12.0 Tf  [(    res.sum = val;)] TJ ET
+BT 34.016 62.333 Td /F4 12.0 Tf  [(    res.pref = res.suff = res.ans = max\(0, val\);)] TJ ET
+BT 34.016 49.883 Td /F4 12.0 Tf  [(    return res;)] TJ ET
+BT 34.016 37.433 Td /F4 12.0 Tf  [(})] TJ ET
+endstream
+endobj
+32 0 obj
+<< /Type /Page
+/Parent 3 0 R
+/Contents 33 0 R
+>>
+endobj
+33 0 obj
+<<
+/Length 4869 >>
+stream
+
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+0.6 w 0 J [  ] 0 d
+BT 34.016 797.914 Td /F4 12.0 Tf  [(void build\(int a[], int v, int tl, int tr\) {)] TJ ET
+BT 34.016 785.464 Td /F4 12.0 Tf  [(    if \(tl == tr\) {)] TJ ET
+BT 34.016 773.014 Td /F4 12.0 Tf  [(        t[v] = make_data\(a[tl]\);)] TJ ET
+BT 34.016 760.563 Td /F4 12.0 Tf  [(    } else {)] TJ ET
+BT 34.016 748.113 Td /F4 12.0 Tf  [(        int tm = \(tl + tr\) / 2;)] TJ ET
+BT 34.016 735.663 Td /F4 12.0 Tf  [(        build\(a, v*2, tl, tm\);)] TJ ET
+BT 34.016 723.213 Td /F4 12.0 Tf  [(        build\(a, v*2+1, tm+1, tr\);)] TJ ET
+BT 34.016 710.762 Td /F4 12.0 Tf  [(        t[v] = combine\(t[v*2], t[v*2+1]\);)] TJ ET
+BT 34.016 698.312 Td /F4 12.0 Tf  [(    })] TJ ET
+BT 34.016 685.862 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 673.412 Td /F4 12.0 Tf  [(void update\(int v, int tl, int tr, int pos, int new_val\) {)] TJ ET
+BT 34.016 660.961 Td /F4 12.0 Tf  [(    if \(tl == tr\) {)] TJ ET
+BT 34.016 648.511 Td /F4 12.0 Tf  [(        t[v] = make_data\(new_val\);)] TJ ET
+BT 34.016 636.061 Td /F4 12.0 Tf  [(    } else {)] TJ ET
+BT 34.016 623.611 Td /F4 12.0 Tf  [(        int tm = \(tl + tr\) / 2;)] TJ ET
+BT 34.016 611.160 Td /F4 12.0 Tf  [(        if \(pos <= tm\))] TJ ET
+BT 34.016 598.710 Td /F4 12.0 Tf  [(            update\(v*2, tl, tm, pos, new_val\);)] TJ ET
+BT 34.016 586.260 Td /F4 12.0 Tf  [(        else)] TJ ET
+BT 34.016 573.810 Td /F4 12.0 Tf  [(            update\(v*2+1, tm+1, tr, pos, new_val\);)] TJ ET
+BT 34.016 561.359 Td /F4 12.0 Tf  [(        t[v] = combine\(t[v*2], t[v*2+1]\);)] TJ ET
+BT 34.016 548.909 Td /F4 12.0 Tf  [(    })] TJ ET
+BT 34.016 536.459 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 510.564 Td /F1 12.0 Tf  [(It only remains, how to compute the answer to a query. To answer it, we go down the tree as before, )] TJ ET
+BT 34.016 496.308 Td /F1 12.0 Tf  [(breaking the query into several subsegments that coincide with the segments of the Segment Tree, and )] TJ ET
+BT 34.016 482.052 Td /F1 12.0 Tf  [(combine the answers in them into a single answer for the query. Then it should be clear, that the work is )] TJ ET
+BT 34.016 467.796 Td /F1 12.0 Tf  [(exactly the same as in the simple Segment Tree, but instead of summing / minimizing / maximizing the )] TJ ET
+BT 34.016 453.540 Td /F1 12.0 Tf  [(values, we use the \\\(\\text{combine}\\\) function.)] TJ ET
+BT 34.016 428.729 Td /F4 12.0 Tf  [(data query\(int v, int tl, int tr, int l, int r\) {)] TJ ET
+BT 34.016 416.279 Td /F4 12.0 Tf  [(    if \(l > r\))] TJ ET
+BT 34.016 403.828 Td /F4 12.0 Tf  [(        return make_data\(0\);)] TJ ET
+BT 34.016 391.378 Td /F4 12.0 Tf  [(    if \(l == tl && r == tr\))] TJ ET
+BT 34.016 378.928 Td /F4 12.0 Tf  [(        return t[v];)] TJ ET
+BT 34.016 366.478 Td /F4 12.0 Tf  [(    int tm = \(tl + tr\) / 2;)] TJ ET
+BT 34.016 354.027 Td /F4 12.0 Tf  [(    return combine\(query\(v*2, tl, tm, l, min\(r, tm\)\),)] TJ ET
+BT 34.016 341.577 Td /F4 12.0 Tf  [(                   query\(v*2+1, tm+1, tr, max\(l, tm+1\), r\)\);)] TJ ET
+BT 34.016 329.127 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 301.293 Td /F2 14.0 Tf  [(Saving the entire subarrays in each vertex)] TJ ET
+BT 34.016 274.552 Td /F1 12.0 Tf  [(This is a separate subsection that stands apart from the others, because at each vertex of the Segment Tree )] TJ ET
+BT 34.016 260.296 Td /F1 12.0 Tf  [(we don't store information about the corresponding segment in compressed form \(sum, minimum, maximum, )] TJ ET
+BT 34.016 246.040 Td /F1 12.0 Tf  [(...\), but store all elements of the segment. Thus the root of the Segment Tree will store all elements of the )] TJ ET
+BT 34.016 231.784 Td /F1 12.0 Tf  [(array, the left child vertex will store the first half of the array, the right vertex the second half, and so on.)] TJ ET
+BT 34.016 205.528 Td /F1 12.0 Tf  [(In its simplest application of this technique we store the elements in sorted order. In more complex versions )] TJ ET
+BT 34.016 191.272 Td /F1 12.0 Tf  [(the elements are not stored in lists, but more advanced data structures \(sets, maps, ...\). But all these methods )] TJ ET
+BT 34.016 177.016 Td /F1 12.0 Tf  [(have the common factor, that each vertex requires linear memory \(i.e. proportional to the length of the )] TJ ET
+BT 34.016 162.760 Td /F1 12.0 Tf  [(corresponding segment\).)] TJ ET
+BT 34.016 136.504 Td /F1 12.0 Tf  [(The first natural question, when considering these Segment Trees, is about memory consumption. Intuitively )] TJ ET
+BT 34.016 122.248 Td /F1 12.0 Tf  [(this might look like \\\(O\(n^2\)\\\) memory, but it turns out that the complete tree will only need \\\(O\(n \\log n\)\\\) )] TJ ET
+BT 34.016 107.992 Td /F1 12.0 Tf  [(memory. Why is this so? Quite simply, because each element of the array falls into \\\(O\(\\log n\)\\\) segments )] TJ ET
+BT 34.016 93.736 Td /F1 12.0 Tf  [(\(remember the height of the tree is \\\(O\(\\log n\)\\\)\).)] TJ ET
+endstream
+endobj
+34 0 obj
+<< /Type /Page
+/Parent 3 0 R
+/Contents 35 0 R
+>>
+endobj
+35 0 obj
+<<
+/Length 5452 >>
+stream
+
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+0.6 w 0 J [  ] 0 d
+BT 34.016 784.469 Td /F1 12.0 Tf  [(So in spite of the apparent extravagance of such a Segment Tree, it consumes only slightly more memory )] TJ ET
+BT 34.016 770.213 Td /F1 12.0 Tf  [(than the usual Segment Tree.)] TJ ET
+BT 34.016 743.957 Td /F1 12.0 Tf  [(Several typical applications of this data structure are described below. It is worth noting the similarity of )] TJ ET
+BT 34.016 729.701 Td /F1 12.0 Tf  [(these Segment Trees with 2D data structures \(in fact this is a 2D data structure, but with rather limited )] TJ ET
+BT 34.016 715.445 Td /F1 12.0 Tf  [(capabilities\).)] TJ ET
+BT 34.016 685.229 Td /F2 12.0 Tf  [(Find the smallest number greater or equal to a specified number. No modification queries.)] TJ ET
+BT 34.016 655.013 Td /F1 12.0 Tf  [(We want to answer queries of the following form: for three given numbers \\\(\(l, r, x\)\\\) we have to find the )] TJ ET
+BT 34.016 640.757 Td /F1 12.0 Tf  [(minimal number in the segment \\\(a[l \\dots r]\\\) which is greater than or equal to \\\(x\\\).)] TJ ET
+BT 34.016 614.501 Td /F1 12.0 Tf  [(We construct a Segment Tree. In each vertex we store a sorted list of all numbers occurring in the )] TJ ET
+BT 34.016 600.245 Td /F1 12.0 Tf  [(corresponding segment, like described above. How to build such a Segment Tree as effectively as possible? )] TJ ET
+BT 34.016 585.989 Td /F1 12.0 Tf  [(As always we approach this problem recursively: let the lists of the left and right children already be )] TJ ET
+BT 34.016 571.733 Td /F1 12.0 Tf  [(constructed, and we want to build the list for the current vertex. From this view the operation is now trivial )] TJ ET
+BT 34.016 557.477 Td /F1 12.0 Tf  [(and can be accomplished in linear time: We only need to combine the two sorted lists into one, which can be )] TJ ET
+BT 34.016 543.221 Td /F1 12.0 Tf  [(done by iterating over them using two pointers. The C++ STL already has an implementation of this )] TJ ET
+BT 34.016 528.965 Td /F1 12.0 Tf  [(algorithm.)] TJ ET
+BT 34.016 502.709 Td /F1 12.0 Tf  [(Because this structure of the Segment Tree and the similarities to the merge sort algorithm, the data structure )] TJ ET
+BT 34.016 488.453 Td /F1 12.0 Tf  [(is also often called )] TJ ET
+BT 126.668 488.453 Td /F1 12.0 Tf  [(")] TJ ET
+BT 131.564 488.453 Td /F1 12.0 Tf  [(Merge Sort Tree)] TJ ET
+BT 210.872 488.453 Td /F1 12.0 Tf  [(")] TJ ET
+BT 215.768 488.453 Td /F1 12.0 Tf  [(.)] TJ ET
+BT 34.016 463.642 Td /F4 12.0 Tf  [(vector<int> t[4*MAXN];)] TJ ET
+BT 34.016 451.192 Td /F4 12.0 Tf  [(void build\(int a[], int v, int tl, int tr\) {)] TJ ET
+BT 34.016 438.742 Td /F4 12.0 Tf  [(    if \(tl == tr\) {)] TJ ET
+BT 34.016 426.291 Td /F4 12.0 Tf  [(        t[v] = vector<int>\(1, a[tl]\);)] TJ ET
+BT 34.016 413.841 Td /F4 12.0 Tf  [(    } else {)] TJ ET
+BT 34.016 401.391 Td /F4 12.0 Tf  [(        int tm = \(tl + tr\) / 2;)] TJ ET
+BT 34.016 388.941 Td /F4 12.0 Tf  [(        build\(a, v*2, tl, tm\);)] TJ ET
+BT 34.016 376.490 Td /F4 12.0 Tf  [(        build\(a, v*2+1, tm+1, tr\);)] TJ ET
+BT 34.016 364.040 Td /F4 12.0 Tf  [(        merge\(t[v*2].begin\(\), t[v*2].end\(\), t[v*2+1].begin\(\), t[v*2+1].end\(\),)] TJ ET
+BT 34.016 351.590 Td /F4 12.0 Tf  [(              back_inserter\(t[v]\)\);)] TJ ET
+BT 34.016 339.140 Td /F4 12.0 Tf  [(    })] TJ ET
+BT 34.016 326.689 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 300.795 Td /F1 12.0 Tf  [(We already know that the Segment Tree constructed in this way will require \\\(O\(n \\log n\)\\\) memory. And )] TJ ET
+BT 34.016 286.539 Td /F1 12.0 Tf  [(thanks to this implementation its construction also takes \\\(O\(n \\log n\)\\\) time, after all each list is constructed )] TJ ET
+BT 34.016 272.283 Td /F1 12.0 Tf  [(in linear time in respect to its size.)] TJ ET
+BT 34.016 246.027 Td /F1 12.0 Tf  [(Now consider the answer to the query. We will go down the tree, like in the regular Segment Tree, breaking )] TJ ET
+BT 34.016 231.771 Td /F1 12.0 Tf  [(our segment \\\(a[l \\dots r]\\\) into several subsegments \(into at most \\\(O\(\\log n\)\\\) pieces\). It is clear that the )] TJ ET
+BT 34.016 217.515 Td /F1 12.0 Tf  [(answer of the whole answer is the minimum of each of the subqueries. So now we only need to understand, )] TJ ET
+BT 34.016 203.259 Td /F1 12.0 Tf  [(how to respond to a query on one such subsegment that corresponds with some vertex of the tree.)] TJ ET
+BT 34.016 177.003 Td /F1 12.0 Tf  [(We are at some vertex of the Segment Tree and we want to compute the answer to the query, i.e. find the )] TJ ET
+BT 34.016 162.747 Td /F1 12.0 Tf  [(minimum number greater that or equal to a given number \\\(x\\\). Since the vertex contains the list of elements )] TJ ET
+BT 34.016 148.491 Td /F1 12.0 Tf  [(in sorted order, we can simply perform a binary search on this list and return the first number, greater than or )] TJ ET
+BT 34.016 134.235 Td /F1 12.0 Tf  [(equal to \\\(x\\\).)] TJ ET
+BT 34.016 107.979 Td /F1 12.0 Tf  [(Thus the answer to the query in one segment of the tree takes \\\(O\(\\log n\)\\\) time, and the entire query is )] TJ ET
+BT 34.016 93.723 Td /F1 12.0 Tf  [(processed in \\\(O\(\\log^2 n\)\\\).)] TJ ET
+BT 34.016 68.911 Td /F4 12.0 Tf  [(int query\(int v, int tl, int tr, int l, int r, int x\) {)] TJ ET
+BT 34.016 56.461 Td /F4 12.0 Tf  [(    if \(l > r\))] TJ ET
+BT 34.016 44.011 Td /F4 12.0 Tf  [(        return INF;)] TJ ET
+BT 34.016 31.560 Td /F4 12.0 Tf  [(    if \(l == tl && r == tr\) {)] TJ ET
+endstream
+endobj
+36 0 obj
+<< /Type /Page
+/Parent 3 0 R
+/Contents 37 0 R
+>>
+endobj
+37 0 obj
+<<
+/Length 4818 >>
+stream
+
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+0.6 w 0 J [  ] 0 d
+BT 34.016 797.914 Td /F4 12.0 Tf  [(        vector<int>::iterator pos = lower_bound\(t[v].begin\(\), t[v].end\(\), x\);)] TJ ET
+BT 34.016 785.464 Td /F4 12.0 Tf  [(        if \(pos != t[v].end\(\)\))] TJ ET
+BT 34.016 773.014 Td /F4 12.0 Tf  [(            return *pos;)] TJ ET
+BT 34.016 760.563 Td /F4 12.0 Tf  [(        return INF;)] TJ ET
+BT 34.016 748.113 Td /F4 12.0 Tf  [(    })] TJ ET
+BT 34.016 735.663 Td /F4 12.0 Tf  [(    int tm = \(tl + tr\) / 2;)] TJ ET
+BT 34.016 723.213 Td /F4 12.0 Tf  [(    return min\(query\(v*2, tl, tm, l, min\(r, tm\), x\),)] TJ ET
+BT 34.016 710.762 Td /F4 12.0 Tf  [(               query\(v*2+1, tm+1, tr, max\(l, tm+1\), r, x\)\);)] TJ ET
+BT 34.016 698.312 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 672.417 Td /F1 12.0 Tf  [(The constant \\\(\\text{INF}\\\) is equal to some large number that is bigger than all numbers in the array. Its )] TJ ET
+BT 34.016 658.161 Td /F1 12.0 Tf  [(usage means, that there is no number greater than or equal to \\\(x\\\) in the segment. It has the meaning of )] TJ ET
+BT 532.928 658.161 Td /F1 12.0 Tf  [(")] TJ ET
+BT 34.016 643.905 Td /F1 12.0 Tf  [(there is no answer in the given interval)] TJ ET
+BT 220.316 643.905 Td /F1 12.0 Tf  [(")] TJ ET
+BT 225.212 643.905 Td /F1 12.0 Tf  [(.)] TJ ET
+BT 34.016 613.689 Td /F2 12.0 Tf  [(Find the smallest number greater or equal to a specified number. With modification queries.)] TJ ET
+BT 34.016 583.473 Td /F1 12.0 Tf  [(This task is similar to the previous. The last approach has a disadvantage, it was not possible to modify the )] TJ ET
+BT 34.016 569.217 Td /F1 12.0 Tf  [(array between answering queries. Now we want to do exactly this: a modification query will do the )] TJ ET
+BT 34.016 554.961 Td /F1 12.0 Tf  [(assignment \\\(a[i] = y\\\).)] TJ ET
+BT 34.016 528.705 Td /F1 12.0 Tf  [(The solution is similar to the solution of the previous problem, but instead of lists at each vertex of the )] TJ ET
+BT 34.016 514.449 Td /F1 12.0 Tf  [(Segment Tree, we will store a balanced list that allows you to quickly search for numbers, delete numbers, )] TJ ET
+BT 34.016 500.193 Td /F1 12.0 Tf  [(and insert new numbers. Since the array can contain a number repeated, the optimal choice is the data )] TJ ET
+BT 34.016 485.937 Td /F1 12.0 Tf  [(structure \\\(\\text{multiset}\\\).)] TJ ET
+BT 34.016 459.681 Td /F1 12.0 Tf  [(The construction of such a Segment Tree is done in pretty much the same way as in the previous problem, )] TJ ET
+BT 34.016 445.425 Td /F1 12.0 Tf  [(only now we need to combine \\\(\\text{multiset}\\\)s and not sorted lists. This leads to a construction time of )] TJ ET
+BT 34.016 431.169 Td /F1 12.0 Tf  [(\\\(O\(n \\log^2 n\)\\\) \(in general merging two red-black trees can be done in linear time, but the C++ STL doesn't )] TJ ET
+BT 34.016 416.913 Td /F1 12.0 Tf  [(guarantee this time complexity\).)] TJ ET
+BT 34.016 390.657 Td /F1 12.0 Tf  [(The \\\(\\text{query}\\\) function is also almost equivalent, only now the \\\(\\text{lower_bound}\\\) function of the )] TJ ET
+BT 34.016 376.401 Td /F1 12.0 Tf  [(\\\(\\text{multiset}\\\) function should be called instead \(\\\(\\text{std::lower_bound}\\\) only works in \\\(O\(\\log n\)\\\) )] TJ ET
+BT 34.016 362.145 Td /F1 12.0 Tf  [(time if used with random-access iterators\).)] TJ ET
+BT 34.016 335.889 Td /F1 12.0 Tf  [(Finally the modification request. To process it, we must go down the tree, and modify all \\\(\\text{multiset}\\\) )] TJ ET
+BT 34.016 321.633 Td /F1 12.0 Tf  [(from the corresponding segments that contain the affected element. We simply delete the old value of this )] TJ ET
+BT 34.016 307.377 Td /F1 12.0 Tf  [(element \(but only one occurrence\), and insert the new value.)] TJ ET
+BT 34.016 282.566 Td /F4 12.0 Tf  [(void update\(int v, int tl, int tr, int pos, int new_val\) {)] TJ ET
+BT 34.016 270.116 Td /F4 12.0 Tf  [(    t[v].erase\(t[v].find\(a[pos]\)\);)] TJ ET
+BT 34.016 257.665 Td /F4 12.0 Tf  [(    t[v].insert\(new_val\);)] TJ ET
+BT 34.016 245.215 Td /F4 12.0 Tf  [(    if \(tl != tr\) {)] TJ ET
+BT 34.016 232.765 Td /F4 12.0 Tf  [(        int tm = \(tl + tr\) / 2;)] TJ ET
+BT 34.016 220.315 Td /F4 12.0 Tf  [(        if \(pos <= tm\))] TJ ET
+BT 34.016 207.864 Td /F4 12.0 Tf  [(            update\(v*2, tl, tm, pos, new_val\);)] TJ ET
+BT 34.016 195.414 Td /F4 12.0 Tf  [(        else)] TJ ET
+BT 34.016 182.964 Td /F4 12.0 Tf  [(            update\(v*2+1, tm+1, tr, pos, new_val\);)] TJ ET
+BT 34.016 170.514 Td /F4 12.0 Tf  [(    } else {)] TJ ET
+BT 34.016 158.063 Td /F4 12.0 Tf  [(        a[pos] = new_val;)] TJ ET
+BT 34.016 145.613 Td /F4 12.0 Tf  [(    })] TJ ET
+BT 34.016 133.163 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 107.268 Td /F1 12.0 Tf  [(Processing of this modification query also takes \\\(O\(\\log^2 n\)\\\) time.)] TJ ET
+endstream
+endobj
+38 0 obj
+<< /Type /Page
+/Parent 3 0 R
+/Contents 39 0 R
+>>
+endobj
+39 0 obj
+<<
+/Length 5859 >>
+stream
+
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+0.6 w 0 J [  ] 0 d
+BT 34.016 780.509 Td /F2 12.0 Tf  [(Find the smallest number greater or equal to a specified number. Acceleration with )] TJ ET
+BT 463.304 780.509 Td /F2 12.0 Tf  [(")] TJ ET
+BT 469.964 780.509 Td /F2 12.0 Tf  [(fractional )] TJ ET
+BT 34.016 766.253 Td /F2 12.0 Tf  [(cascading)] TJ ET
+BT 84.020 766.253 Td /F2 12.0 Tf  [(")] TJ ET
+BT 90.680 766.253 Td /F2 12.0 Tf  [(.)] TJ ET
+BT 34.016 736.037 Td /F1 12.0 Tf  [(We have the same problem statement, we want to find the minimal number greater than or equal to \\\(x\\\) in a )] TJ ET
+BT 34.016 721.781 Td /F1 12.0 Tf  [(segment, but this time in \\\(O\(\\log n\)\\\) time. We will improve the time complexity using the technique )] TJ ET
+BT 524.336 721.781 Td /F1 12.0 Tf  [(")] TJ ET
+BT 34.016 707.525 Td /F1 12.0 Tf  [(fractional cascading)] TJ ET
+BT 130.316 707.525 Td /F1 12.0 Tf  [(")] TJ ET
+BT 135.212 707.525 Td /F1 12.0 Tf  [(.)] TJ ET
+BT 34.016 681.269 Td /F1 12.0 Tf  [(Fractional cascading is a simple technique that allows you to improve the running time of multiple binary )] TJ ET
+BT 34.016 667.013 Td /F1 12.0 Tf  [(searches, which are conducted at the same time. Our previous approach to the search query was, that we )] TJ ET
+BT 34.016 652.757 Td /F1 12.0 Tf  [(divide the task into several subtasks, each of which is solved with a binary search. Fractional cascading )] TJ ET
+BT 34.016 638.501 Td /F1 12.0 Tf  [(allows you to replace all of these binary searches with a single one.)] TJ ET
+BT 34.016 612.245 Td /F1 12.0 Tf  [(The simplest and most obvious example of fractional cascading is the following problem: there are \\\(k\\\) )] TJ ET
+BT 34.016 597.989 Td /F1 12.0 Tf  [(sorted lists of numbers, and we must find in each list the first number greater than or equal to the given )] TJ ET
+BT 34.016 583.733 Td /F1 12.0 Tf  [(number.)] TJ ET
+BT 34.016 557.477 Td /F1 12.0 Tf  [(Instead of performing a binary search for each list, we could merge all lists into one big sorted list. )] TJ ET
+BT 34.016 543.221 Td /F1 12.0 Tf  [(Additionally for each element \\\(y\\\) we store a list of results of searching for \\\(y\\\) in each of the \\\(k\\\) lists. )] TJ ET
+BT 34.016 528.965 Td /F1 12.0 Tf  [(Therefore if we want to find the smallest number greater than or equal to \\\(x\\\), we just need to perform one )] TJ ET
+BT 34.016 514.709 Td /F1 12.0 Tf  [(single binary search, and from the list of indices we can determine the smallest number in each list. This )] TJ ET
+BT 34.016 500.453 Td /F1 12.0 Tf  [(approach however requires \\\(O\(n \\cdot k\)\\\) \(\\\(n\\\) is the length of the combined lists\), which can be quite )] TJ ET
+BT 34.016 486.197 Td /F1 12.0 Tf  [(inefficient.)] TJ ET
+BT 34.016 459.941 Td /F1 12.0 Tf  [(Fractional cascading reduces this memory complexity to \\\(O\(n\)\\\) memory, by creating from the \\\(k\\\) input )] TJ ET
+BT 34.016 445.685 Td /F1 12.0 Tf  [(lists \\\(k\\\) new lists, in which each list contains the corresponding list and additionally also every second )] TJ ET
+BT 34.016 431.429 Td /F1 12.0 Tf  [(element of the following new list. Using this structure it is only necessary to store two indices, the index of )] TJ ET
+BT 34.016 417.173 Td /F1 12.0 Tf  [(the element in the original list, and the index of the element in the following new list. So this approach only )] TJ ET
+BT 34.016 402.917 Td /F1 12.0 Tf  [(uses \\\(O\(n\)\\\) memory, and still can answer the queries using a single binary search.)] TJ ET
+BT 34.016 376.661 Td /F1 12.0 Tf  [(But for our application we do not need the full power of fractional cascading. In our Segment Tree a vertex )] TJ ET
+BT 34.016 362.405 Td /F1 12.0 Tf  [(will contain the sorted list of all elements that occur in either the left or the right subtrees \(like in the Merge )] TJ ET
+BT 34.016 348.149 Td /F1 12.0 Tf  [(Sort Tree\). Additionally to this sorted list, we store two positions for each element. For an element \\\(y\\\) we )] TJ ET
+BT 34.016 333.893 Td /F1 12.0 Tf  [(store the smallest index \\\(i\\\), such that the \\\(i\\\)th element in the sorted list of the left child is greater or equal )] TJ ET
+BT 34.016 319.637 Td /F1 12.0 Tf  [(to \\\(y\\\). And we store the smallest index \\\(j\\\), such that the \\\(j\\\)th element in the sorted list of the right child )] TJ ET
+BT 34.016 305.381 Td /F1 12.0 Tf  [(is greater or equal to \\\(y\\\). These values can be computed in parallel to the merging step when we build the )] TJ ET
+BT 34.016 291.125 Td /F1 12.0 Tf  [(tree.)] TJ ET
+BT 34.016 264.869 Td /F1 12.0 Tf  [(How does this speed up the queries?)] TJ ET
+BT 34.016 238.613 Td /F1 12.0 Tf  [(Remember, in the normal solution we did a binary search in every node. But with this modification, we can )] TJ ET
+BT 34.016 224.357 Td /F1 12.0 Tf  [(avoid all except one.)] TJ ET
+BT 34.016 198.101 Td /F1 12.0 Tf  [(To answer a query, we simply do a binary search in the root node. This gives us the smallest element \\\(y \\ge )] TJ ET
+BT 34.016 183.845 Td /F1 12.0 Tf  [(x\\\) in the complete array, but it also gives us two positions. The index of the smallest element greater or )] TJ ET
+BT 34.016 169.589 Td /F1 12.0 Tf  [(equal \\\(x\\\) in the left subtree, and the index of the smallest element \\\(y\\\) in the right subtree. Notice that \\\(\\ge )] TJ ET
+BT 34.016 155.333 Td /F1 12.0 Tf  [(y\\\) is the same as \\\(\\ge x\\\), since our array doesn't contain any elements between \\\(x\\\) and \\\(y\\\). In the normal )] TJ ET
+BT 34.016 141.077 Td /F1 12.0 Tf  [(Merge Sort Tree solution we would compute these indices via binary search, but with the help of the )] TJ ET
+BT 34.016 126.821 Td /F1 12.0 Tf  [(precomputed values we can just look them up in \\\(O\(1\)\\\). And we can repeat that until we visited all nodes )] TJ ET
+BT 34.016 112.565 Td /F1 12.0 Tf  [(that cover our query interval.)] TJ ET
+endstream
+endobj
+40 0 obj
+<< /Type /Page
+/Parent 3 0 R
+/Annots [ 42 0 R ]
+/Contents 41 0 R
+>>
+endobj
+41 0 obj
+<<
+/Length 5348 >>
+stream
+
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+0.6 w 0 J [  ] 0 d
+BT 34.016 784.469 Td /F1 12.0 Tf  [(To summarize, as usual we touch \\\(O\(\\log n\)\\\) nodes during a query. In the root node we do a binary search, )] TJ ET
+BT 34.016 770.213 Td /F1 12.0 Tf  [(and in all other nodes we only do constant work. This means the complexity for answering a query is )] TJ ET
+BT 34.016 755.957 Td /F1 12.0 Tf  [(\\\(O\(\\log n\)\\\).)] TJ ET
+BT 34.016 729.701 Td /F1 12.0 Tf  [(But notice, that this uses three times more memory than a normal Merge Sort Tree, which already uses a lot )] TJ ET
+BT 34.016 715.445 Td /F1 12.0 Tf  [(of memory \(\\\(O\(n \\log n\)\\\)\).)] TJ ET
+BT 34.016 689.189 Td /F1 12.0 Tf  [(It is straightforward to apply this technique to a problem, that doesn't require any modification queries. The )] TJ ET
+BT 34.016 674.933 Td /F1 12.0 Tf  [(two positions are just integers and can easily be computed by counting when merging the two sorted )] TJ ET
+BT 34.016 660.677 Td /F1 12.0 Tf  [(sequences.)] TJ ET
+BT 34.016 634.421 Td /F1 12.0 Tf  [(It it still possible to also allow modification queries, but that complicates the entire code. Instead of integers, )] TJ ET
+BT 34.016 620.165 Td /F1 12.0 Tf  [(you need to store the sorted array as )] TJ ET
+BT 209.972 620.165 Td /F4 12.0 Tf  [(multiset)] TJ ET
+BT 267.572 620.165 Td /F1 12.0 Tf  [(, and instead of indices you need to store iterators. And you )] TJ ET
+BT 34.016 605.909 Td /F1 12.0 Tf  [(need to work very carefully, so that you increment or decrement the correct iterators during a modification )] TJ ET
+BT 34.016 591.653 Td /F1 12.0 Tf  [(query.)] TJ ET
+BT 34.016 561.437 Td /F2 12.0 Tf  [(Other possible variations)] TJ ET
+BT 34.016 531.221 Td /F1 12.0 Tf  [(This technique implies a whole new class of possible applications. Instead of storing a \\\(\\text{vector}\\\) or a )] TJ ET
+BT 34.016 516.965 Td /F1 12.0 Tf  [(\\\(\\text{multiset}\\\) in each vertex, other data structures can be used: other Segment Trees \(somewhat )] TJ ET
+BT 34.016 502.709 Td /F1 12.0 Tf  [(discussed in )] TJ ET
+0.000 0.000 0.800 rg
+BT 95.348 502.709 Td /F1 12.0 Tf  [(Generalization to higher dimensions)] TJ ET
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+95.348 500.009 m 269.660 500.009 l S
+0.000 0.000 0.000 rg
+BT 269.660 502.709 Td /F1 12.0 Tf  [(\), Fenwick Trees, Cartesian trees, etc.)] TJ ET
+BT 34.016 474.515 Td /F2 14.0 Tf  [(Range updates \(Lazy Propagation\))] TJ ET
+BT 34.016 447.774 Td /F1 12.0 Tf  [(All problems in the above sections discussed modification queries that only affected a single element of the )] TJ ET
+BT 34.016 433.518 Td /F1 12.0 Tf  [(array each. However the Segment Tree allows applying modification queries to an entire segment of )] TJ ET
+BT 34.016 419.262 Td /F1 12.0 Tf  [(contiguous elements, and perform the query in the same time \\\(O\(\\log n\)\\\).)] TJ ET
+BT 34.016 389.046 Td /F2 12.0 Tf  [(Addition on segments)] TJ ET
+BT 34.016 358.830 Td /F1 12.0 Tf  [(We begin by considering problems of the simplest form: the modification query should add a number \\\(x\\\) to )] TJ ET
+BT 34.016 344.574 Td /F1 12.0 Tf  [(all numbers in the segment \\\(a[l \\dots r]\\\). The second query, that we are supposed to answer, asked simply )] TJ ET
+BT 34.016 330.318 Td /F1 12.0 Tf  [(for the value of \\\(a[i]\\\).)] TJ ET
+BT 34.016 304.062 Td /F1 12.0 Tf  [(To make the addition query efficient, we store at each vertex in the Segment Tree how many we should add )] TJ ET
+BT 34.016 289.806 Td /F1 12.0 Tf  [(to all numbers in the corresponding segment. For example, if the query )] TJ ET
+BT 377.972 289.806 Td /F1 12.0 Tf  [(")] TJ ET
+BT 382.868 289.806 Td /F1 12.0 Tf  [(add 3 to the whole array \\\(a[0 \\dots )] TJ ET
+BT 34.016 275.550 Td /F1 12.0 Tf  [(n-1]\\\))] TJ ET
+BT 61.340 275.550 Td /F1 12.0 Tf  [(")] TJ ET
+BT 66.236 275.550 Td /F1 12.0 Tf  [( comes, then we place the number 3 in the root of the tree. In general we have to place this number to )] TJ ET
+BT 34.016 261.294 Td /F1 12.0 Tf  [(multiple segments, which form a partition of the query segment. Thus we don't have to change all \\\(O\(n\)\\\) )] TJ ET
+BT 34.016 247.038 Td /F1 12.0 Tf  [(values, but only \\\(O\(\\log n\)\\\) many.)] TJ ET
+BT 34.016 220.782 Td /F1 12.0 Tf  [(If now there comes a query that asks the current value of a particular array entry, it is enough to go down the )] TJ ET
+BT 34.016 206.526 Td /F1 12.0 Tf  [(tree and add up all values found along the way.)] TJ ET
+BT 34.016 181.715 Td /F4 12.0 Tf  [(void build\(int a[], int v, int tl, int tr\) {)] TJ ET
+BT 34.016 169.264 Td /F4 12.0 Tf  [(    if \(tl == tr\) {)] TJ ET
+BT 34.016 156.814 Td /F4 12.0 Tf  [(        t[v] = a[tl];)] TJ ET
+BT 34.016 144.364 Td /F4 12.0 Tf  [(    } else {)] TJ ET
+BT 34.016 131.914 Td /F4 12.0 Tf  [(        int tm = \(tl + tr\) / 2;)] TJ ET
+BT 34.016 119.463 Td /F4 12.0 Tf  [(        build\(a, v*2, tl, tm\);)] TJ ET
+BT 34.016 107.013 Td /F4 12.0 Tf  [(        build\(a, v*2+1, tm+1, tr\);)] TJ ET
+BT 34.016 94.563 Td /F4 12.0 Tf  [(        t[v] = 0;)] TJ ET
+BT 34.016 82.113 Td /F4 12.0 Tf  [(    })] TJ ET
+BT 34.016 69.662 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 57.212 Td /F4 12.0 Tf  [(void update\(int v, int tl, int tr, int l, int r, int add\) {)] TJ ET
+BT 34.016 44.762 Td /F4 12.0 Tf  [(    if \(l > r\))] TJ ET
+BT 34.016 32.312 Td /F4 12.0 Tf  [(        return;)] TJ ET
+endstream
+endobj
+42 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 43 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 95.3477 501.6295 269.6597 513.5095 ]
+>>
+endobj
+43 0 obj
+<< /Type /Action
+/S /URI
+/URI (segment_tree.md#generalization-to-higher-dimensions)
+>>
+endobj
+44 0 obj
+<< /Type /Page
+/Parent 3 0 R
+/Contents 45 0 R
+>>
+endobj
+45 0 obj
+<<
+/Length 5714 >>
+stream
+
+0.000 0.000 0.000 rg
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+BT 34.016 797.914 Td /F4 12.0 Tf  [(    if \(l == tl && r == tr\) {)] TJ ET
+BT 34.016 785.464 Td /F4 12.0 Tf  [(        t[v] += add;)] TJ ET
+BT 34.016 773.014 Td /F4 12.0 Tf  [(    } else {)] TJ ET
+BT 34.016 760.563 Td /F4 12.0 Tf  [(        int tm = \(tl + tr\) / 2;)] TJ ET
+BT 34.016 748.113 Td /F4 12.0 Tf  [(        update\(v*2, tl, tm, l, min\(r, tm\), add\);)] TJ ET
+BT 34.016 735.663 Td /F4 12.0 Tf  [(        update\(v*2+1, tm+1, tr, max\(l, tm+1\), r, add\);)] TJ ET
+BT 34.016 723.213 Td /F4 12.0 Tf  [(    })] TJ ET
+BT 34.016 710.762 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 698.312 Td /F4 12.0 Tf  [(int get\(int v, int tl, int tr, int pos\) {)] TJ ET
+BT 34.016 685.862 Td /F4 12.0 Tf  [(    if \(tl == tr\))] TJ ET
+BT 34.016 673.412 Td /F4 12.0 Tf  [(        return t[v];)] TJ ET
+BT 34.016 660.961 Td /F4 12.0 Tf  [(    int tm = \(tl + tr\) / 2;)] TJ ET
+BT 34.016 648.511 Td /F4 12.0 Tf  [(    if \(pos <= tm\))] TJ ET
+BT 34.016 636.061 Td /F4 12.0 Tf  [(        return t[v] + get\(v*2, tl, tm, pos\);)] TJ ET
+BT 34.016 623.611 Td /F4 12.0 Tf  [(    else)] TJ ET
+BT 34.016 611.160 Td /F4 12.0 Tf  [(        return t[v] + get\(v*2+1, tm+1, tr, pos\);)] TJ ET
+BT 34.016 598.710 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 568.855 Td /F2 12.0 Tf  [(Assignment on segments)] TJ ET
+BT 34.016 538.639 Td /F1 12.0 Tf  [(Suppose now that the modification query asks to assign each element of a certain segment \\\(a[l \\dots r]\\\) to )] TJ ET
+BT 34.016 524.383 Td /F1 12.0 Tf  [(some value \\\(p\\\). As a second query we will again consider reading the value of the array \\\(a[i]\\\).)] TJ ET
+BT 34.016 498.127 Td /F1 12.0 Tf  [(To perform this modification query on a whole segment, you have to store at each vertex of the Segment )] TJ ET
+BT 34.016 483.871 Td /F1 12.0 Tf  [(Tree whether the corresponding segment is covered entirely with the same value or not. This allows us to )] TJ ET
+BT 34.016 469.615 Td /F1 12.0 Tf  [(make a )] TJ ET
+BT 71.336 469.615 Td /F1 12.0 Tf  [(")] TJ ET
+BT 76.232 469.615 Td /F1 12.0 Tf  [(lazy)] TJ ET
+BT 96.224 469.615 Td /F1 12.0 Tf  [(")] TJ ET
+BT 101.120 469.615 Td /F1 12.0 Tf  [( update: instead of changing all segments in the tree that cover the query segment, we only )] TJ ET
+BT 34.016 455.359 Td /F1 12.0 Tf  [(change some, and leave others unchanged. A marked vertex will mean, that every element of the )] TJ ET
+BT 34.016 441.103 Td /F1 12.0 Tf  [(corresponding segment is assigned to that value, and actually also the complete subtree should only contain )] TJ ET
+BT 34.016 426.847 Td /F1 12.0 Tf  [(this value. In a sense we are lazy and delay writing the new value to all those vertices. We can do this )] TJ ET
+BT 34.016 412.591 Td /F1 12.0 Tf  [(tedious task later, if this is necessary.)] TJ ET
+BT 34.016 386.335 Td /F1 12.0 Tf  [(So after the modification query is executed, some parts of the tree become irrelevant - some modifications )] TJ ET
+BT 34.016 372.079 Td /F1 12.0 Tf  [(remain unfulfilled in it.)] TJ ET
+BT 34.016 345.823 Td /F1 12.0 Tf  [(For example if a modification query )] TJ ET
+BT 210.656 345.823 Td /F1 12.0 Tf  [(")] TJ ET
+BT 215.552 345.823 Td /F1 12.0 Tf  [(assign a number to the whole array \\\(a[0 \\dots n-1]\\\))] TJ ET
+BT 465.836 345.823 Td /F1 12.0 Tf  [(")] TJ ET
+BT 470.732 345.823 Td /F1 12.0 Tf  [( gets executed, in )] TJ ET
+BT 34.016 331.567 Td /F1 12.0 Tf  [(the Segment Tree only a single change is made - the number is placed in the root of the tree and this vertex )] TJ ET
+BT 34.016 317.311 Td /F1 12.0 Tf  [(gets marked. The remaining segments remain unchanged, although in fact the number should be placed in )] TJ ET
+BT 34.016 303.055 Td /F1 12.0 Tf  [(the whole tree.)] TJ ET
+BT 34.016 276.799 Td /F1 12.0 Tf  [(Suppose now that the second modification query says, that the first half of the array \\\(a[0 \\dots n/2]\\\) should )] TJ ET
+BT 34.016 262.543 Td /F1 12.0 Tf  [(be assigned with some other number. To process this query we must assign each element in the whole left )] TJ ET
+BT 34.016 248.287 Td /F1 12.0 Tf  [(child of the root vertex with that number. But before we do this, we must first sort out the root vertex first. )] TJ ET
+BT 34.016 234.031 Td /F1 12.0 Tf  [(The subtlety here is that the right half of the array should still be assigned to the value of the first query, and )] TJ ET
+BT 34.016 219.775 Td /F1 12.0 Tf  [(at the moment there is no information for the right half stored.)] TJ ET
+BT 34.016 193.519 Td /F1 12.0 Tf  [(The way to solve this is to push the information of the root to its children, i.e. if the root of the tree was )] TJ ET
+BT 34.016 179.263 Td /F1 12.0 Tf  [(assigned with any number, then we assign the left and the right child vertices with this number and remove )] TJ ET
+BT 34.016 165.007 Td /F1 12.0 Tf  [(the mark of the root. After that, we can assign the left child with the new value, without losing any necessary )] TJ ET
+BT 34.016 150.751 Td /F1 12.0 Tf  [(information.)] TJ ET
+BT 34.016 124.495 Td /F1 12.0 Tf  [(Summarizing we get: for any queries \(a modification or reading query\) during the descent along the tree we )] TJ ET
+BT 34.016 110.239 Td /F1 12.0 Tf  [(should always push information from the current vertex into both of its children. We can understand this in )] TJ ET
+BT 34.016 95.983 Td /F1 12.0 Tf  [(such a way, that when we descent the tree we apply delayed modifications, but exactly as much as necessary )] TJ ET
+BT 34.016 81.727 Td /F1 12.0 Tf  [(\(so not to degrade the complexity of \\\(O\(\\log n\)\\\)\).)] TJ ET
+BT 34.016 55.471 Td /F1 12.0 Tf  [(For the implementation we need to make a \\\(\\text{push}\\\) function, which will receive the current vertex, )] TJ ET
+endstream
+endobj
+46 0 obj
+<< /Type /Page
+/Parent 3 0 R
+/Contents 47 0 R
+>>
+endobj
+47 0 obj
+<<
+/Length 4588 >>
+stream
+
+0.000 0.000 0.000 rg
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+BT 34.016 796.469 Td /F1 12.0 Tf  [(and it will push the information for its vertex to both its children. We will call this function at the beginning )] TJ ET
+BT 34.016 782.213 Td /F1 12.0 Tf  [(of the query functions \(but we will not call it from the leaves, because there is no need to push information )] TJ ET
+BT 34.016 767.957 Td /F1 12.0 Tf  [(from them any further\).)] TJ ET
+BT 34.016 743.146 Td /F4 12.0 Tf  [(void push\(int v\) {)] TJ ET
+BT 34.016 730.696 Td /F4 12.0 Tf  [(    if \(marked[v]\) {)] TJ ET
+BT 34.016 718.246 Td /F4 12.0 Tf  [(        t[v*2] = t[v*2+1] = t[v];)] TJ ET
+BT 34.016 705.795 Td /F4 12.0 Tf  [(        marked[v*2] = marked[v*2+1] = true;)] TJ ET
+BT 34.016 693.345 Td /F4 12.0 Tf  [(        marked[v] = false;)] TJ ET
+BT 34.016 680.895 Td /F4 12.0 Tf  [(    })] TJ ET
+BT 34.016 668.445 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 655.994 Td /F4 12.0 Tf  [(void update\(int v, int tl, int tr, int l, int r, int new_val\) {)] TJ ET
+BT 34.016 643.544 Td /F4 12.0 Tf  [(    if \(l > r\))] TJ ET
+BT 34.016 631.094 Td /F4 12.0 Tf  [(        return;)] TJ ET
+BT 34.016 618.644 Td /F4 12.0 Tf  [(    if \(l == tl && tr == r\) {)] TJ ET
+BT 34.016 606.193 Td /F4 12.0 Tf  [(        t[v] = new_val;)] TJ ET
+BT 34.016 593.743 Td /F4 12.0 Tf  [(        marked[v] = true;)] TJ ET
+BT 34.016 581.293 Td /F4 12.0 Tf  [(    } else {)] TJ ET
+BT 34.016 568.843 Td /F4 12.0 Tf  [(        push\(v\);)] TJ ET
+BT 34.016 556.392 Td /F4 12.0 Tf  [(        int tm = \(tl + tr\) / 2;)] TJ ET
+BT 34.016 543.942 Td /F4 12.0 Tf  [(        update\(v*2, tl, tm, l, min\(r, tm\), new_val\);)] TJ ET
+BT 34.016 531.492 Td /F4 12.0 Tf  [(        update\(v*2+1, tm+1, tr, max\(l, tm+1\), r, new_val\);)] TJ ET
+BT 34.016 519.042 Td /F4 12.0 Tf  [(    })] TJ ET
+BT 34.016 506.591 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 494.141 Td /F4 12.0 Tf  [(int get\(int v, int tl, int tr, int pos\) {)] TJ ET
+BT 34.016 481.691 Td /F4 12.0 Tf  [(    if \(tl == tr\) {)] TJ ET
+BT 34.016 469.241 Td /F4 12.0 Tf  [(        return t[v];)] TJ ET
+BT 34.016 456.791 Td /F4 12.0 Tf  [(    })] TJ ET
+BT 34.016 444.340 Td /F4 12.0 Tf  [(    push\(v\);)] TJ ET
+BT 34.016 431.890 Td /F4 12.0 Tf  [(    int tm = \(tl + tr\) / 2;)] TJ ET
+BT 34.016 419.440 Td /F4 12.0 Tf  [(    if \(pos <= tm\))] TJ ET
+BT 34.016 406.990 Td /F4 12.0 Tf  [(        return get\(v*2, tl, tm, pos\);)] TJ ET
+BT 34.016 394.539 Td /F4 12.0 Tf  [(    else)] TJ ET
+BT 34.016 382.089 Td /F4 12.0 Tf  [(        return get\(v*2+1, tm+1, tr, pos\);)] TJ ET
+BT 34.016 369.639 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 343.744 Td /F1 12.0 Tf  [(Notice: the function \\\(\\text{get}\\\) can also be implemented in a different way: do not make delayed updates, )] TJ ET
+BT 34.016 329.488 Td /F1 12.0 Tf  [(but immediately return the value \\\(t[v]\\\) if \\\(marked[v]\\\) is true.)] TJ ET
+BT 34.016 299.272 Td /F2 12.0 Tf  [(Adding on segments, querying for maximum)] TJ ET
+BT 34.016 269.056 Td /F1 12.0 Tf  [(Now the modification query is to add a number to all elements in a range, and the reading query is to find )] TJ ET
+BT 34.016 254.800 Td /F1 12.0 Tf  [(the maximum in a range.)] TJ ET
+BT 34.016 228.544 Td /F1 12.0 Tf  [(So for each vertex of the Segment Tree we have to store the maximum of the corresponding subsegment. )] TJ ET
+BT 34.016 214.288 Td /F1 12.0 Tf  [(The interesting part is how to recompute these values during a modification request.)] TJ ET
+BT 34.016 188.032 Td /F1 12.0 Tf  [(For this purpose we keep store an additional value for each vertex. In this value we store the addends we )] TJ ET
+BT 34.016 173.776 Td /F1 12.0 Tf  [(haven't propagated to the child vertices. Before traversing to a child vertex, we call \\\(\\text{push}\\\) and )] TJ ET
+BT 34.016 159.520 Td /F1 12.0 Tf  [(propagate the value to both children. We have to do this in both the \\\(\\text{update}\\\) function and the )] TJ ET
+BT 34.016 145.264 Td /F1 12.0 Tf  [(\\\(\\text{query}\\\) function.)] TJ ET
+BT 34.016 120.453 Td /F4 12.0 Tf  [(void build\(int a[], int v, int tl, int tr\) {)] TJ ET
+BT 34.016 108.002 Td /F4 12.0 Tf  [(    if \(tl == tr\) {)] TJ ET
+BT 34.016 95.552 Td /F4 12.0 Tf  [(        t[v] = a[tl];)] TJ ET
+BT 34.016 83.102 Td /F4 12.0 Tf  [(    } else {)] TJ ET
+BT 34.016 70.652 Td /F4 12.0 Tf  [(        int tm = \(tl + tr\) / 2;)] TJ ET
+BT 34.016 58.201 Td /F4 12.0 Tf  [(        build\(a, v*2, tl, tm\);)] TJ ET
+BT 34.016 45.751 Td /F4 12.0 Tf  [(        build\(a, v*2+1, tm+1, tr\);)] TJ ET
+BT 34.016 33.301 Td /F4 12.0 Tf  [(        t[v] = max\(t[v*2], t[v*2 + 1]\);)] TJ ET
+endstream
+endobj
+48 0 obj
+<< /Type /Page
+/Parent 3 0 R
+/Contents 49 0 R
+>>
+endobj
+49 0 obj
+<<
+/Length 4698 >>
+stream
+
+0.000 0.000 0.000 rg
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+BT 34.016 797.914 Td /F4 12.0 Tf  [(    })] TJ ET
+BT 34.016 785.464 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 773.014 Td /F4 12.0 Tf  [(void push\(int v\) {)] TJ ET
+BT 34.016 760.563 Td /F4 12.0 Tf  [(    t[v*2] += lazy[v];)] TJ ET
+BT 34.016 748.113 Td /F4 12.0 Tf  [(    lazy[v*2] += lazy[v];)] TJ ET
+BT 34.016 735.663 Td /F4 12.0 Tf  [(    t[v*2+1] += lazy[v];)] TJ ET
+BT 34.016 723.213 Td /F4 12.0 Tf  [(    lazy[v*2+1] += lazy[v];)] TJ ET
+BT 34.016 710.762 Td /F4 12.0 Tf  [(    lazy[v] = 0;)] TJ ET
+BT 34.016 698.312 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 685.862 Td /F4 12.0 Tf  [(void update\(int v, int tl, int tr, int l, int r, int addend\) {)] TJ ET
+BT 34.016 673.412 Td /F4 12.0 Tf  [(    if \(l > r\))] TJ ET
+BT 34.016 660.961 Td /F4 12.0 Tf  [(        return;)] TJ ET
+BT 34.016 648.511 Td /F4 12.0 Tf  [(    if \(l == tl && tr == r\) {)] TJ ET
+BT 34.016 636.061 Td /F4 12.0 Tf  [(        t[v] += addend;)] TJ ET
+BT 34.016 623.611 Td /F4 12.0 Tf  [(        lazy[v] += addend;)] TJ ET
+BT 34.016 611.160 Td /F4 12.0 Tf  [(    } else {)] TJ ET
+BT 34.016 598.710 Td /F4 12.0 Tf  [(        push\(v\);)] TJ ET
+BT 34.016 586.260 Td /F4 12.0 Tf  [(        int tm = \(tl + tr\) / 2;)] TJ ET
+BT 34.016 573.810 Td /F4 12.0 Tf  [(        update\(v*2, tl, tm, l, min\(r, tm\), addend\);)] TJ ET
+BT 34.016 561.359 Td /F4 12.0 Tf  [(        update\(v*2+1, tm+1, tr, max\(l, tm+1\), r, addend\);)] TJ ET
+BT 34.016 548.909 Td /F4 12.0 Tf  [(        t[v] = max\(t[v*2], t[v*2+1]\);)] TJ ET
+BT 34.016 536.459 Td /F4 12.0 Tf  [(    })] TJ ET
+BT 34.016 524.009 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 511.559 Td /F4 12.0 Tf  [(int query\(int v, int tl, int tr, int l, int r\) {)] TJ ET
+BT 34.016 499.108 Td /F4 12.0 Tf  [(    if \(l > r\))] TJ ET
+BT 34.016 486.658 Td /F4 12.0 Tf  [(        return -INF;)] TJ ET
+BT 34.016 474.208 Td /F4 12.0 Tf  [(    if \(l == tl && tr == r\))] TJ ET
+BT 34.016 461.758 Td /F4 12.0 Tf  [(        return t[v];)] TJ ET
+BT 34.016 449.307 Td /F4 12.0 Tf  [(    push\(v\);)] TJ ET
+BT 34.016 436.857 Td /F4 12.0 Tf  [(    int tm = \(tl + tr\) / 2;)] TJ ET
+BT 34.016 424.407 Td /F4 12.0 Tf  [(    return max\(query\(v*2, tl, tm, l, min\(r, tm\)\),)] TJ ET
+BT 34.016 411.957 Td /F4 12.0 Tf  [(               query\(v*2+1, tm+1, tr, max\(l, tm+1\), r\)\);)] TJ ET
+BT 34.016 399.506 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 371.673 Td /F2 14.0 Tf  [(Generalization to higher dimensions)] TJ ET
+BT 34.016 344.932 Td /F1 12.0 Tf  [(A Segment Tree can be generalized quite natural to higher dimensions. If in the one-dimensional case we )] TJ ET
+BT 34.016 330.676 Td /F1 12.0 Tf  [(split the indices of the array into segments, then in the two-dimensional we make an ordinary Segment Tree )] TJ ET
+BT 34.016 316.420 Td /F1 12.0 Tf  [(with respect to the first indices, and for each segment we build an ordinary Segment Tree with respect to the )] TJ ET
+BT 34.016 302.164 Td /F1 12.0 Tf  [(second indices.)] TJ ET
+BT 34.016 271.948 Td /F2 12.0 Tf  [(Simple 2D Segment Tree)] TJ ET
+BT 34.016 241.732 Td /F1 12.0 Tf  [(A matrix \\\(a[0 \\dots n-1, 0 \\dots m-1]\\\) is given, and we have to find the sum \(or minimum/maximum\) on )] TJ ET
+BT 34.016 227.476 Td /F1 12.0 Tf  [(some submatrix \\\(a[x_1 \\dots x_2, y_1 \\dots y_2]\\\), as well as perform modifications of individual matrix )] TJ ET
+BT 34.016 213.220 Td /F1 12.0 Tf  [(elements \(i.e. queries of the form \\\(a[x][y] = p\\\)\).)] TJ ET
+BT 34.016 186.964 Td /F1 12.0 Tf  [(So we build a 2D Segment Tree: first the Segment Tree using the first coordinate \(\\\(x\\\)\), then the second )] TJ ET
+BT 34.016 172.708 Td /F1 12.0 Tf  [(\(\\\(y\\\)\).)] TJ ET
+BT 34.016 146.452 Td /F1 12.0 Tf  [(To make the construction process more understandable, you can forget for a while that the matrix is two-)] TJ ET
+BT 34.016 132.196 Td /F1 12.0 Tf  [(dimensional, and only leave the first coordinate. We will construct an ordinary one-dimensional Segment )] TJ ET
+BT 34.016 117.940 Td /F1 12.0 Tf  [(Tree using only the first coordinate. But instead of storing a number in a segment, we store an entire )] TJ ET
+BT 34.016 103.684 Td /F1 12.0 Tf  [(Segment Tree: i.e. at this moment we remember that we also have a second coordinate; but because at this )] TJ ET
+BT 34.016 89.428 Td /F1 12.0 Tf  [(moment the first coordinate is already fixed to some interval \\\([l \\dots r]\\\), we actually work with such a strip )] TJ ET
+BT 34.016 75.172 Td /F1 12.0 Tf  [(\\\(a[l \\dots r, 0 \\dots m-1]\\\) and for it we build a Segment Tree.)] TJ ET
+BT 34.016 48.916 Td /F1 12.0 Tf  [(Here is the implementation of the construction of a 2D Segment Tree. It actually represents two separate )] TJ ET
+endstream
+endobj
+50 0 obj
+<< /Type /Page
+/Parent 3 0 R
+/Contents 51 0 R
+>>
+endobj
+51 0 obj
+<<
+/Length 5061 >>
+stream
+
+0.000 0.000 0.000 rg
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+BT 34.016 796.469 Td /F1 12.0 Tf  [(blocks: the construction of a Segment Tree along the \\\(x\\\) coordinate \(\\\(\\text{build}_x\\\)\), and the \\\(y\\\) )] TJ ET
+BT 34.016 782.213 Td /F1 12.0 Tf  [(coordinate \(\\\(\\text{build}_y\\\)\). For the leaf nodes in \\\(\\text{build}_y\\\) we have to separate two cases: when )] TJ ET
+BT 34.016 767.957 Td /F1 12.0 Tf  [(the current segment of the first coordinate \\\([tlx \\dots trx]\\\) has length 1, and when it has a length greater )] TJ ET
+BT 34.016 753.701 Td /F1 12.0 Tf  [(than one. In the first case, we just take the corresponding value from the matrix, and in the second case we )] TJ ET
+BT 34.016 739.445 Td /F1 12.0 Tf  [(can combine the values of two Segment Trees from the left and the right son in the coordinate \\\(x\\\).)] TJ ET
+BT 34.016 714.634 Td /F4 12.0 Tf  [(void build_y\(int vx, int lx, int rx, int vy, int ly, int ry\) {)] TJ ET
+BT 34.016 702.184 Td /F4 12.0 Tf  [(    if \(ly == ry\) {)] TJ ET
+BT 34.016 689.734 Td /F4 12.0 Tf  [(        if \(lx == rx\))] TJ ET
+BT 34.016 677.283 Td /F4 12.0 Tf  [(            t[vx][vy] = a[lx][ly];)] TJ ET
+BT 34.016 664.833 Td /F4 12.0 Tf  [(        else)] TJ ET
+BT 34.016 652.383 Td /F4 12.0 Tf  [(            t[vx][vy] = t[vx*2][vy] + t[vx*2+1][vy];)] TJ ET
+BT 34.016 639.933 Td /F4 12.0 Tf  [(    } else {)] TJ ET
+BT 34.016 627.482 Td /F4 12.0 Tf  [(        int my = \(ly + ry\) / 2;)] TJ ET
+BT 34.016 615.032 Td /F4 12.0 Tf  [(        build_y\(vx, lx, rx, vy*2, ly, my\);)] TJ ET
+BT 34.016 602.582 Td /F4 12.0 Tf  [(        build_y\(vx, lx, rx, vy*2+1, my+1, ry\);)] TJ ET
+BT 34.016 590.132 Td /F4 12.0 Tf  [(        t[vx][vy] = t[vx][vy*2] + t[vx][vy*2+1];)] TJ ET
+BT 34.016 577.681 Td /F4 12.0 Tf  [(    })] TJ ET
+BT 34.016 565.231 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 552.781 Td /F4 12.0 Tf  [(void build_x\(int vx, int lx, int rx\) {)] TJ ET
+BT 34.016 540.331 Td /F4 12.0 Tf  [(    if \(lx != rx\) {)] TJ ET
+BT 34.016 527.880 Td /F4 12.0 Tf  [(        int mx = \(lx + rx\) / 2;)] TJ ET
+BT 34.016 515.430 Td /F4 12.0 Tf  [(        build_x\(vx*2, lx, mx\);)] TJ ET
+BT 34.016 502.980 Td /F4 12.0 Tf  [(        build_x\(vx*2+1, mx+1, rx\);)] TJ ET
+BT 34.016 490.530 Td /F4 12.0 Tf  [(    })] TJ ET
+BT 34.016 478.079 Td /F4 12.0 Tf  [(    build_y\(vx, lx, rx, 1, 0, m-1\);)] TJ ET
+BT 34.016 465.629 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 439.734 Td /F1 12.0 Tf  [(Such a Segment Tree still uses a linear amount of memory, but with a larger constant: \\\(16 n m\\\). It is clear )] TJ ET
+BT 34.016 425.478 Td /F1 12.0 Tf  [(that the described procedure \\\(\\text{build}_x\\\) also works in linear time.)] TJ ET
+BT 34.016 399.222 Td /F1 12.0 Tf  [(Now we turn to processing of queries. We will answer to the two-dimensional query using the same )] TJ ET
+BT 34.016 384.966 Td /F1 12.0 Tf  [(principle: first break the query on the first coordinate, and then for every reached vertex, we call the )] TJ ET
+BT 34.016 370.710 Td /F1 12.0 Tf  [(corresponding Segment Tree of the second coordinate.)] TJ ET
+BT 34.016 345.899 Td /F4 12.0 Tf  [(int sum_y\(int vx, int vy, int tly, int try_, int ly, int ry\) {)] TJ ET
+BT 34.016 333.449 Td /F4 12.0 Tf  [(    if \(ly > ry\))] TJ ET
+BT 34.016 320.999 Td /F4 12.0 Tf  [(        return 0;)] TJ ET
+BT 34.016 308.548 Td /F4 12.0 Tf  [(    if \(ly == tly && try_ == ry\))] TJ ET
+BT 34.016 296.098 Td /F4 12.0 Tf  [(        return t[vx][vy];)] TJ ET
+BT 34.016 283.648 Td /F4 12.0 Tf  [(    int tmy = \(tly + try_\) / 2;)] TJ ET
+BT 34.016 271.198 Td /F4 12.0 Tf  [(    return sum_y\(vx, vy*2, tly, tmy, ly, min\(ry, tmy\)\))] TJ ET
+BT 34.016 258.747 Td /F4 12.0 Tf  [(         + sum_y\(vx, vy*2+1, tmy+1, try_, max\(ly, tmy+1\), ry\);)] TJ ET
+BT 34.016 246.297 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 233.847 Td /F4 12.0 Tf  [(int sum_x\(int vx, int tlx, int trx, int lx, int rx, int ly, int ry\) {)] TJ ET
+BT 34.016 221.397 Td /F4 12.0 Tf  [(    if \(lx > rx\))] TJ ET
+BT 34.016 208.946 Td /F4 12.0 Tf  [(        return 0;)] TJ ET
+BT 34.016 196.496 Td /F4 12.0 Tf  [(    if \(lx == tlx && trx == rx\))] TJ ET
+BT 34.016 184.046 Td /F4 12.0 Tf  [(        return sum_y\(vx, 1, 0, m-1, ly, ry\);)] TJ ET
+BT 34.016 171.596 Td /F4 12.0 Tf  [(    int tmx = \(tlx + trx\) / 2;)] TJ ET
+BT 34.016 159.145 Td /F4 12.0 Tf  [(    return sum_x\(vx*2, tlx, tmx, lx, min\(rx, tmx\), ly, ry\))] TJ ET
+BT 34.016 146.695 Td /F4 12.0 Tf  [(         + sum_x\(vx*2+1, tmx+1, trx, max\(lx, tmx+1\), rx, ly, ry\);)] TJ ET
+BT 34.016 134.245 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 108.350 Td /F1 12.0 Tf  [(This function works in \\\(O\(\\log n \\log m\)\\\) time, since it first descends the tree in the first coordinate, and for )] TJ ET
+BT 34.016 94.094 Td /F1 12.0 Tf  [(each traversed vertex in the tree it makes a query in the corresponding Segment Tree along the second )] TJ ET
+BT 34.016 79.838 Td /F1 12.0 Tf  [(coordinate.)] TJ ET
+BT 34.016 53.582 Td /F1 12.0 Tf  [(Finally we consider the modification query. We want to learn how to modify the Segment Tree in )] TJ ET
+endstream
+endobj
+52 0 obj
+<< /Type /Page
+/Parent 3 0 R
+/Contents 53 0 R
+>>
+endobj
+53 0 obj
+<<
+/Length 5831 >>
+stream
+
+0.000 0.000 0.000 rg
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+BT 34.016 796.469 Td /F1 12.0 Tf  [(accordance with the change in the value of some element \\\(a[x][y] = p\\\). It is clear, that the changes will )] TJ ET
+BT 34.016 782.213 Td /F1 12.0 Tf  [(occur only in those vertices of the first Segment Tree that cover the coordinate \\\(x\\\) \(and such will be )] TJ ET
+BT 34.016 767.957 Td /F1 12.0 Tf  [(\\\(O\(\\log n\)\\\)\), and for Segment Trees corresponding to them the changes will only occurs at those vertices )] TJ ET
+BT 34.016 753.701 Td /F1 12.0 Tf  [(that covers the coordinate \\\(y\\\) \(and such will be \\\(O\(\\log m\)\\\)\). Therefore the implementation will be not )] TJ ET
+BT 34.016 739.445 Td /F1 12.0 Tf  [(very different form the one-dimensional case, only now we first descend the first coordinate, and then the )] TJ ET
+BT 34.016 725.189 Td /F1 12.0 Tf  [(second.)] TJ ET
+BT 34.016 700.378 Td /F4 12.0 Tf  [(void update_y\(int vx, int lx, int rx, int vy, int ly, int ry, int x, int y, int new_val\) {)] TJ ET
+BT 34.016 687.928 Td /F4 12.0 Tf  [(    if \(ly == ry\) {)] TJ ET
+BT 34.016 675.478 Td /F4 12.0 Tf  [(        if \(lx == rx\))] TJ ET
+BT 34.016 663.027 Td /F4 12.0 Tf  [(            t[vx][vy] = new_val;)] TJ ET
+BT 34.016 650.577 Td /F4 12.0 Tf  [(        else)] TJ ET
+BT 34.016 638.127 Td /F4 12.0 Tf  [(            t[vx][vy] = t[vx*2][vy] + t[vx*2+1][vy];)] TJ ET
+BT 34.016 625.677 Td /F4 12.0 Tf  [(    } else {)] TJ ET
+BT 34.016 613.226 Td /F4 12.0 Tf  [(        int my = \(ly + ry\) / 2;)] TJ ET
+BT 34.016 600.776 Td /F4 12.0 Tf  [(        if \(y <= my\))] TJ ET
+BT 34.016 588.326 Td /F4 12.0 Tf  [(            update_y\(vx, lx, rx, vy*2, ly, my, x, y, new_val\);)] TJ ET
+BT 34.016 575.876 Td /F4 12.0 Tf  [(        else)] TJ ET
+BT 34.016 563.425 Td /F4 12.0 Tf  [(            update_y\(vx, lx, rx, vy*2+1, my+1, ry, x, y, new_val\);)] TJ ET
+BT 34.016 550.975 Td /F4 12.0 Tf  [(        t[vx][vy] = t[vx][vy*2] + t[vx][vy*2+1];)] TJ ET
+BT 34.016 538.525 Td /F4 12.0 Tf  [(    })] TJ ET
+BT 34.016 526.075 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 513.624 Td /F4 12.0 Tf  [(void update_x\(int vx, int lx, int rx, int x, int y, int new_val\) {)] TJ ET
+BT 34.016 501.174 Td /F4 12.0 Tf  [(    if \(lx != rx\) {)] TJ ET
+BT 34.016 488.724 Td /F4 12.0 Tf  [(        int mx = \(lx + rx\) / 2;)] TJ ET
+BT 34.016 476.274 Td /F4 12.0 Tf  [(        if \(x <= mx\))] TJ ET
+BT 34.016 463.823 Td /F4 12.0 Tf  [(            update_x\(vx*2, lx, mx, x, y, new_val\);)] TJ ET
+BT 34.016 451.373 Td /F4 12.0 Tf  [(        else)] TJ ET
+BT 34.016 438.923 Td /F4 12.0 Tf  [(            update_x\(vx*2+1, mx+1, rx, x, y, new_val\);)] TJ ET
+BT 34.016 426.473 Td /F4 12.0 Tf  [(    })] TJ ET
+BT 34.016 414.023 Td /F4 12.0 Tf  [(    update_y\(vx, lx, rx, 1, 0, m-1, x, y, new_val\);)] TJ ET
+BT 34.016 401.572 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 371.717 Td /F2 12.0 Tf  [(Compression of 2D Segment Tree)] TJ ET
+BT 34.016 341.501 Td /F1 12.0 Tf  [(Let the problem be the following: there are \\\(n\\\) points on the plane given by their coordinates \\\(\(x_i, y_i\)\\\) )] TJ ET
+BT 34.016 327.245 Td /F1 12.0 Tf  [(and queries of the form )] TJ ET
+BT 148.988 327.245 Td /F1 12.0 Tf  [(")] TJ ET
+BT 153.884 327.245 Td /F1 12.0 Tf  [(count the number of points lying in the rectangle \\\(\(\(x_1, y_1\), \(x_2, y_2\)\)\\\))] TJ ET
+BT 519.500 327.245 Td /F1 12.0 Tf  [(")] TJ ET
+BT 524.396 327.245 Td /F1 12.0 Tf  [(. It is )] TJ ET
+BT 34.016 312.989 Td /F1 12.0 Tf  [(clear that in the case of such a problem it becomes unreasonably wasteful to construct a two-dimensional )] TJ ET
+BT 34.016 298.733 Td /F1 12.0 Tf  [(Segment Tree with \\\(O\(n^2\)\\\) elements. Most on this memory will be wasted, since each single point can )] TJ ET
+BT 34.016 284.477 Td /F1 12.0 Tf  [(only get into \\\(O\(\\log n\)\\\) segments of the tree along the first coordinate, and therefore the total )] TJ ET
+BT 493.940 284.477 Td /F1 12.0 Tf  [(")] TJ ET
+BT 498.836 284.477 Td /F1 12.0 Tf  [(useful)] TJ ET
+BT 528.164 284.477 Td /F1 12.0 Tf  [(")] TJ ET
+BT 533.060 284.477 Td /F1 12.0 Tf  [( size )] TJ ET
+BT 34.016 270.221 Td /F1 12.0 Tf  [(of all tree segments on the second coordinate is \\\(O\(n \\log n\)\\\).)] TJ ET
+BT 34.016 243.965 Td /F1 12.0 Tf  [(So we proceed as follows: at each vertex of the Segment Tree with respect to the first coordinate we store a )] TJ ET
+BT 34.016 229.709 Td /F1 12.0 Tf  [(Segment Tree constructed only by those second coordinates that occur in the current segment of the first )] TJ ET
+BT 34.016 215.453 Td /F1 12.0 Tf  [(coordinates. In other words, when constructing a Segment Tree inside some vertex with index \\\(vx\\\) and the )] TJ ET
+BT 34.016 201.197 Td /F1 12.0 Tf  [(boundaries \\\(tlx\\\) and \\\(trx\\\), we only consider those points that fall into this interval \\\(x \\in [tlx, trx]\\\), and )] TJ ET
+BT 34.016 186.941 Td /F1 12.0 Tf  [(build a Segment Tree just using them.)] TJ ET
+BT 34.016 160.685 Td /F1 12.0 Tf  [(Thus we will achieve that each Segment Tree on the second coordinate will occupy exactly as much memory )] TJ ET
+BT 34.016 146.429 Td /F1 12.0 Tf  [(as it should. As a result, the total amount of memory will decrease to \\\(O\(n \\log n\)\\\). We still can answer the )] TJ ET
+BT 34.016 132.173 Td /F1 12.0 Tf  [(queries in \\\(O\(\\log^2 n\)\\\) time, we just have to make a binary search on the second coordinate, but this will )] TJ ET
+BT 34.016 117.917 Td /F1 12.0 Tf  [(not worsen the complexity.)] TJ ET
+BT 34.016 91.661 Td /F1 12.0 Tf  [(But modification queries will be impossible with this structure: in fact if a new point appears, we have to add )] TJ ET
+BT 34.016 77.405 Td /F1 12.0 Tf  [(a new element in the middle of some Segment Tree along the second coordinate, which cannot be effectively )] TJ ET
+BT 34.016 63.149 Td /F1 12.0 Tf  [(done.)] TJ ET
+endstream
+endobj
+54 0 obj
+<< /Type /Page
+/Parent 3 0 R
+/Annots [ 56 0 R 58 0 R ]
+/Contents 55 0 R
+>>
+endobj
+55 0 obj
+<<
+/Length 5796 >>
+stream
+
+0.000 0.000 0.000 rg
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+BT 34.016 784.469 Td /F1 12.0 Tf  [(In conclusion we note that the two-dimensional Segment Tree contracted in the described way becomes )] TJ ET
+BT 34.016 770.213 Td /F1 12.0 Tf  [(practically equivalent to the modification of the one-dimensional Segment Tree \(see )] TJ ET
+0.000 0.000 0.800 rg
+BT 440.948 770.213 Td /F1 12.0 Tf  [(Saving the entire )] TJ ET
+0.6 w 0 J [  ] 0 d
+440.948 767.513 m 525.272 767.513 l S
+BT 34.016 755.957 Td /F1 12.0 Tf  [(subarrays in each vertex)] TJ ET
+0.6 w 0 J [  ] 0 d
+34.016 753.257 m 150.308 753.257 l S
+0.000 0.000 0.000 rg
+BT 150.308 755.957 Td /F1 12.0 Tf  [(\). In particular the two-dimensional Segment Tree is just a special case of storing a )] TJ ET
+BT 34.016 741.701 Td /F1 12.0 Tf  [(subarray in each vertex of the tree. It follows, that if you gave to abandon a two-dimensional Segment Tree )] TJ ET
+BT 34.016 727.445 Td /F1 12.0 Tf  [(due to the impossibility of executing a query, it makes sense to try to replace the nested Segment Tree with )] TJ ET
+BT 34.016 713.189 Td /F1 12.0 Tf  [(some more powerful data structure, for example a Cartesian tree.)] TJ ET
+BT 34.016 684.995 Td /F2 14.0 Tf  [(Preserving the history of its values \(Persistent Segment Tree\))] TJ ET
+BT 34.016 658.254 Td /F1 12.0 Tf  [(A persistent data structure is a data structure that remembers it previous state for each modification. This )] TJ ET
+BT 34.016 643.998 Td /F1 12.0 Tf  [(allows to access any version of this data structure that interest us and execute a query on it.)] TJ ET
+BT 34.016 617.742 Td /F1 12.0 Tf  [(Segment Tree is a data structure that can be turned into a persistent data structure efficiently \(both in time )] TJ ET
+BT 34.016 603.486 Td /F1 12.0 Tf  [(and memory consumption\). We want to avoid copying the complete tree before each modification, and we )] TJ ET
+BT 34.016 589.230 Td /F1 12.0 Tf  [(don't want to loose the \\\(O\(\\log n\)\\\) time behavior for answering range queries.)] TJ ET
+BT 34.016 562.974 Td /F1 12.0 Tf  [(In fact, any change request in the Segment Tree leads to a change in the data of only \\\(O\(\\log n\)\\\) vertices )] TJ ET
+BT 34.016 548.718 Td /F1 12.0 Tf  [(along the path starting from the root. So if we store the Segment Tree using pointers \(i.e. a vertex stores )] TJ ET
+BT 34.016 534.462 Td /F1 12.0 Tf  [(pointers to the left and the right child vertices\), then when performing the modification query, we simply )] TJ ET
+BT 34.016 520.206 Td /F1 12.0 Tf  [(need to create new vertices instead of changing the available vertices. Vertices that are not affected by the )] TJ ET
+BT 34.016 505.950 Td /F1 12.0 Tf  [(modification query can still be used by pointing the pointers to the old vertices. Thus for a modification )] TJ ET
+BT 34.016 491.694 Td /F1 12.0 Tf  [(query \\\(O\(\\log n\)\\\) new vertices will be created, including a new root vertex of the Segment Tree, and the )] TJ ET
+BT 34.016 477.438 Td /F1 12.0 Tf  [(entire previous version of the tree rooted at the old root vertex will remain unchanged.)] TJ ET
+BT 34.016 451.182 Td /F1 12.0 Tf  [(Let's give an example implementation for the simplest Segment Tree: when there is only a query asking for )] TJ ET
+BT 34.016 436.926 Td /F1 12.0 Tf  [(sums, and modification queries of single elements.)] TJ ET
+BT 34.016 412.115 Td /F4 12.0 Tf  [(struct Vertex {)] TJ ET
+BT 34.016 399.664 Td /F4 12.0 Tf  [(    Vertex *l, *r;)] TJ ET
+BT 34.016 387.214 Td /F4 12.0 Tf  [(    int sum;)] TJ ET
+BT 34.016 374.764 Td /F4 12.0 Tf  [(    Vertex\(int val\) : l\(nullptr\), r\(nullptr\), sum\(val\) {})] TJ ET
+BT 34.016 362.314 Td /F4 12.0 Tf  [(    Vertex\(Vertex *l, Vertex *r\) : l\(l\), r\(r\), sum\(0\) {)] TJ ET
+BT 34.016 349.863 Td /F4 12.0 Tf  [(        if \(l\) sum += l->sum;)] TJ ET
+BT 34.016 337.413 Td /F4 12.0 Tf  [(        if \(r\) sum += r->sum;)] TJ ET
+BT 34.016 324.963 Td /F4 12.0 Tf  [(    })] TJ ET
+BT 34.016 312.513 Td /F4 12.0 Tf  [(};)] TJ ET
+BT 34.016 300.062 Td /F4 12.0 Tf  [(Vertex* build\(int a[], int tl, int tr\) {)] TJ ET
+BT 34.016 287.612 Td /F4 12.0 Tf  [(    if \(tl == tr\))] TJ ET
+BT 34.016 275.162 Td /F4 12.0 Tf  [(        return new Vertex\(a[tl]\);)] TJ ET
+BT 34.016 262.712 Td /F4 12.0 Tf  [(    int tm = \(tl + tr\) / 2;)] TJ ET
+BT 34.016 250.261 Td /F4 12.0 Tf  [(    return new Vertex\(build\(a, tl, tm\), build\(a, tm+1, tr\)\);)] TJ ET
+BT 34.016 237.811 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 225.361 Td /F4 12.0 Tf  [(int get_sum\(Vertex* v, int tl, int tr, int l, int r\) {)] TJ ET
+BT 34.016 212.911 Td /F4 12.0 Tf  [(    if \(l > r\))] TJ ET
+BT 34.016 200.460 Td /F4 12.0 Tf  [(        return 0;)] TJ ET
+BT 34.016 188.010 Td /F4 12.0 Tf  [(    if \(l == tl && tr == r\))] TJ ET
+BT 34.016 175.560 Td /F4 12.0 Tf  [(        return v->sum;)] TJ ET
+BT 34.016 163.110 Td /F4 12.0 Tf  [(    int tm = \(tl + tr\) / 2;)] TJ ET
+BT 34.016 150.659 Td /F4 12.0 Tf  [(    return get_sum\(v->l, tl, tm, l, min\(r, tm\)\))] TJ ET
+BT 34.016 138.209 Td /F4 12.0 Tf  [(         + get_sum\(v->r, tm+1, tr, max\(l, tm+1\), r\);)] TJ ET
+BT 34.016 125.759 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 113.309 Td /F4 12.0 Tf  [(Vertex* update\(Vertex* v, int tl, int tr, int pos, int new_val\) {)] TJ ET
+BT 34.016 100.859 Td /F4 12.0 Tf  [(    if \(tl == tr\))] TJ ET
+BT 34.016 88.408 Td /F4 12.0 Tf  [(        return new Vertex\(new_val\);)] TJ ET
+BT 34.016 75.958 Td /F4 12.0 Tf  [(    int tm = \(tl + tr\) / 2;)] TJ ET
+BT 34.016 63.508 Td /F4 12.0 Tf  [(    if \(pos <= tm\))] TJ ET
+BT 34.016 51.058 Td /F4 12.0 Tf  [(        return new Vertex\(update\(v->l, tl, tm, pos, new_val\), v->r\);)] TJ ET
+BT 34.016 38.607 Td /F4 12.0 Tf  [(    else)] TJ ET
+BT 34.016 26.157 Td /F4 12.0 Tf  [(        return new Vertex\(v->l, update\(v->r, tm+1, tr, pos, new_val\)\);)] TJ ET
+endstream
+endobj
+56 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 57 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 440.9477 769.1335 525.2717 781.0135 ]
+>>
+endobj
+57 0 obj
+<< /Type /Action
+/S /URI
+/URI (segment_tree.md#saving-the-entire-subarrays-in-each-vertex)
+>>
+endobj
+58 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 59 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 34.0157 754.8775 150.3077 766.7575 ]
+>>
+endobj
+59 0 obj
+<< /Type /Action
+/S /URI
+/URI (segment_tree.md#saving-the-entire-subarrays-in-each-vertex)
+>>
+endobj
+60 0 obj
+<< /Type /Page
+/Parent 3 0 R
+/Annots [ 62 0 R ]
+/Contents 61 0 R
+>>
+endobj
+61 0 obj
+<<
+/Length 6384 >>
+stream
+
+0.000 0.000 0.000 rg
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+BT 34.016 797.914 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 772.019 Td /F1 12.0 Tf  [(For each modification of the Segment Tree we will receive a new root vertex. To quickly jump between two )] TJ ET
+BT 34.016 757.763 Td /F1 12.0 Tf  [(different versions of the Segment Tree, we need to store this roots in an array. To use a specific version of )] TJ ET
+BT 34.016 743.507 Td /F1 12.0 Tf  [(the Segment Tree we simply call the query using the appropriate root vertex.)] TJ ET
+BT 34.016 717.251 Td /F1 12.0 Tf  [(With the approach described above almost any Segment Tree can be turned into a persistent data structure.)] TJ ET
+BT 34.016 687.035 Td /F2 12.0 Tf  [(Finding the \\\(k\\\)-th smallest number in a range {data-toc-label=)] TJ ET
+BT 359.588 687.035 Td /F2 12.0 Tf  [(")] TJ ET
+BT 366.248 687.035 Td /F2 12.0 Tf  [(Finding the k-th smallest number in )] TJ ET
+BT 34.016 672.779 Td /F2 12.0 Tf  [(a range)] TJ ET
+BT 72.344 672.779 Td /F2 12.0 Tf  [(")] TJ ET
+BT 79.004 672.779 Td /F2 12.0 Tf  [(})] TJ ET
+BT 34.016 642.563 Td /F1 12.0 Tf  [(This time we have to answer queries of the form "What is the \\\(k\\\)-th smallest element in the range \\\(a[l \\dots )] TJ ET
+BT 34.016 628.307 Td /F1 12.0 Tf  [(r]\\\). This query can be answered using a binary search and a Merge Sort Tree, but the time complexity for a )] TJ ET
+BT 34.016 614.051 Td /F1 12.0 Tf  [(single query would be \\\(O\(\\log^3 n\)\\\). We will accomplish the same task using a persistent Segment Tree in )] TJ ET
+BT 34.016 599.795 Td /F1 12.0 Tf  [(\\\(O\(\\log n\)\\\).)] TJ ET
+BT 34.016 573.539 Td /F1 12.0 Tf  [(First we will discuss a solution for a simpler problem: We will only consider arrays in which the elements )] TJ ET
+BT 34.016 559.283 Td /F1 12.0 Tf  [(are bound by \\\(0 \\le a[i] \\lt n\\\). And we only want to find the \\\(k\\\)-th smallest element in some prefix of the )] TJ ET
+BT 34.016 545.027 Td /F1 12.0 Tf  [(array \\\(a\\\). It will be very easy to extent the developed ideas later for not restricted arrays and not restricted )] TJ ET
+BT 34.016 530.771 Td /F1 12.0 Tf  [(range queries. Note that we will be using 1 based indexing for \\\(a\\\).)] TJ ET
+BT 34.016 504.515 Td /F1 12.0 Tf  [(We will use a Segment Tree that counts all appearing numbers, i.e. in the Segment Tree we will store the )] TJ ET
+BT 34.016 490.259 Td /F1 12.0 Tf  [(histogram of the array. So the leaf vertices will store how often the values \\\(0\\\), \\\(1\\\), \\\(\\dots\\\), \\\(n-1\\\) will )] TJ ET
+BT 34.016 476.003 Td /F1 12.0 Tf  [(appear in the array, and the other vertices store how many numbers in some range are in the array. In other )] TJ ET
+BT 34.016 461.747 Td /F1 12.0 Tf  [(words we create a regular Segment Tree with sum queries over the histogram of the array. But instead of )] TJ ET
+BT 34.016 447.491 Td /F1 12.0 Tf  [(creating all \\\(n\\\) Segment Trees for every possible prefix, we will create one persistent one, that will contain )] TJ ET
+BT 34.016 433.235 Td /F1 12.0 Tf  [(the same information. We will start with an empty Segment Tree \(all counts will be \\\(0\\\)\) pointed to by )] TJ ET
+BT 34.016 418.979 Td /F1 12.0 Tf  [(\\\(root_0\\\), and add the elements \\\(a[1]\\\), \\\(a[2]\\\), \\\(\\dots\\\), \\\(a[n]\\\) one after another. For each modification )] TJ ET
+BT 34.016 404.723 Td /F1 12.0 Tf  [(we will receive a new root vertex, let's call \\\(root_i\\\) the root of the Segment Tree after inserting the first \\\(i\\\) )] TJ ET
+BT 34.016 390.467 Td /F1 12.0 Tf  [(elements of the array \\\(a\\\). The Segment Tree rooted at \\\(root_i\\\) will contain the histogram of the prefix )] TJ ET
+BT 34.016 376.211 Td /F1 12.0 Tf  [(\\\(a[1 \\dots i]\\\). Using this Segment Tree we can find in \\\(O\(\\log n\)\\\) time the position of the \\\(k\\\)-th element )] TJ ET
+BT 34.016 361.955 Td /F1 12.0 Tf  [(using the same technique discussed in )] TJ ET
+0.000 0.000 0.800 rg
+BT 219.332 361.955 Td /F1 12.0 Tf  [(Counting the number of zeros, searching for the \\\(k\\\)-th zero)] TJ ET
+0.6 w 0 J [  ] 0 d
+219.332 359.255 m 509.936 359.255 l S
+0.000 0.000 0.000 rg
+BT 509.936 361.955 Td /F1 12.0 Tf  [(.)] TJ ET
+BT 34.016 335.699 Td /F1 12.0 Tf  [(Now to the not-restricted version of the problem.)] TJ ET
+BT 34.016 309.443 Td /F1 12.0 Tf  [(First for the restriction on the queries: Instead of only performing these queries over a prefix of \\\(a\\\), we )] TJ ET
+BT 34.016 295.187 Td /F1 12.0 Tf  [(want to use any arbitrary segments \\\(a[l \\dots r]\\\). Here we need a Segment Tree that represents the )] TJ ET
+BT 34.016 280.931 Td /F1 12.0 Tf  [(histogram of the elements in the range \\\(a[l \\dots r]\\\). It is easy to see that such a Segment Tree is just the )] TJ ET
+BT 34.016 266.675 Td /F1 12.0 Tf  [(difference between the Segment Tree rooted at \\\(root_{r}\\\) and the Segment Tree rooted at \\\(root_{l-1}\\\), )] TJ ET
+BT 34.016 252.419 Td /F1 12.0 Tf  [(i.e. every vertex in the \\\([l \\dots r]\\\) Segment Tree can be computed with the vertex of the \\\(root_{r}\\\) tree )] TJ ET
+BT 34.016 238.163 Td /F1 12.0 Tf  [(minus the vertex of the \\\(root_{l-1}\\\) tree.)] TJ ET
+BT 34.016 211.907 Td /F1 12.0 Tf  [(In the implementation of the \\\(\\text{find_kth}\\\) function this can be handled by passing two vertex pointer )] TJ ET
+BT 34.016 197.651 Td /F1 12.0 Tf  [(and computing the count/sum of the current segment as difference of the two counts/sums of the vertices.)] TJ ET
+BT 34.016 171.395 Td /F1 12.0 Tf  [(Here are the modified \\\(\\text{build}\\\), \\\(\\text{update}\\\) and \\\(\\text{find_kth}\\\) functions)] TJ ET
+BT 34.016 146.584 Td /F4 12.0 Tf  [(Vertex* build\(int tl, int tr\) {)] TJ ET
+BT 34.016 134.134 Td /F4 12.0 Tf  [(    if \(tl == tr\))] TJ ET
+BT 34.016 121.683 Td /F4 12.0 Tf  [(        return new Vertex\(0\);)] TJ ET
+BT 34.016 109.233 Td /F4 12.0 Tf  [(    int tm = \(tl + tr\) / 2;)] TJ ET
+BT 34.016 96.783 Td /F4 12.0 Tf  [(    return new Vertex\(build\(tl, tm\), build\(tm+1, tr\)\);)] TJ ET
+BT 34.016 84.333 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 71.882 Td /F4 12.0 Tf  [(Vertex* update\(Vertex* v, int tl, int tr, int pos\) {)] TJ ET
+BT 34.016 59.432 Td /F4 12.0 Tf  [(    if \(tl == tr\))] TJ ET
+BT 34.016 46.982 Td /F4 12.0 Tf  [(        return new Vertex\(v->sum+1\);)] TJ ET
+BT 34.016 34.532 Td /F4 12.0 Tf  [(    int tm = \(tl + tr\) / 2;)] TJ ET
+endstream
+endobj
+62 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 63 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 219.3317 360.8752 509.9357 372.7552 ]
+>>
+endobj
+63 0 obj
+<< /Type /Action
+/S /URI
+/URI (segment_tree.md#counting-zero-search-kth)
+>>
+endobj
+64 0 obj
+<< /Type /Page
+/Parent 3 0 R
+/Contents 65 0 R
+>>
+endobj
+65 0 obj
+<<
+/Length 5670 >>
+stream
+
+0.000 0.000 0.000 rg
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+BT 34.016 797.914 Td /F4 12.0 Tf  [(    if \(pos <= tm\))] TJ ET
+BT 34.016 785.464 Td /F4 12.0 Tf  [(        return new Vertex\(update\(v->l, tl, tm, pos\), v->r\);)] TJ ET
+BT 34.016 773.014 Td /F4 12.0 Tf  [(    else)] TJ ET
+BT 34.016 760.563 Td /F4 12.0 Tf  [(        return new Vertex\(v->l, update\(v->r, tm+1, tr, pos\)\);)] TJ ET
+BT 34.016 748.113 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 735.663 Td /F4 12.0 Tf  [(int find_kth\(Vertex* vl, Vertex *vr, int tl, int tr, int k\) {)] TJ ET
+BT 34.016 723.213 Td /F4 12.0 Tf  [(    if \(tl == tr\))] TJ ET
+BT 34.016 710.762 Td /F4 12.0 Tf  [(        return tl;)] TJ ET
+BT 34.016 698.312 Td /F4 12.0 Tf  [(    int tm = \(tl + tr\) / 2, left_count = vr->l->sum - vl->l->sum;)] TJ ET
+BT 34.016 685.862 Td /F4 12.0 Tf  [(    if \(left_count >= k\))] TJ ET
+BT 34.016 673.412 Td /F4 12.0 Tf  [(        return find_kth\(vl->l, vr->l, tl, tm, k\);)] TJ ET
+BT 34.016 660.961 Td /F4 12.0 Tf  [(    return find_kth\(vl->r, vr->r, tm+1, tr, k-left_count\);)] TJ ET
+BT 34.016 648.511 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 622.616 Td /F1 12.0 Tf  [(As already written above, we need to store the root of the initial Segment Tree, and also all the roots after )] TJ ET
+BT 34.016 608.360 Td /F1 12.0 Tf  [(each update. Here is the code for building a persistent Segment Tree over an vector )] TJ ET
+BT 436.580 608.360 Td /F4 12.0 Tf  [(a)] TJ ET
+BT 443.780 608.360 Td /F1 12.0 Tf  [( with elements in the )] TJ ET
+BT 34.016 594.104 Td /F1 12.0 Tf  [(range )] TJ ET
+BT 63.668 594.104 Td /F4 12.0 Tf  [([0, MAX_VALUE])] TJ ET
+BT 164.468 594.104 Td /F1 12.0 Tf  [(.)] TJ ET
+BT 34.016 569.293 Td /F4 12.0 Tf  [(int tl = 0, tr = MAX_VALUE + 1;)] TJ ET
+BT 34.016 556.843 Td /F4 12.0 Tf  [(std::vector<Vertex*> roots;)] TJ ET
+BT 34.016 544.392 Td /F4 12.0 Tf  [(roots.push_back\(build\(tl, tr\)\);)] TJ ET
+BT 34.016 531.942 Td /F4 12.0 Tf  [(for \(int i = 0; i < a.size\(\); i++\) {)] TJ ET
+BT 34.016 519.492 Td /F4 12.0 Tf  [(    roots.push_back\(update\(roots.back\(\), tl, tr, a[i]\)\);)] TJ ET
+BT 34.016 507.042 Td /F4 12.0 Tf  [(})] TJ ET
+BT 34.016 494.591 Td /F4 12.0 Tf  [(// find the 5th smallest number from the subarray [a[2], a[3], ..., a[19]])] TJ ET
+BT 34.016 482.141 Td /F4 12.0 Tf  [(int result = find_kth\(roots[2], roots[20], tl, tr, 5\);)] TJ ET
+BT 34.016 456.246 Td /F1 12.0 Tf  [(Now to the restrictions on the array elements: We can actually transform any array to such an array by index )] TJ ET
+BT 34.016 441.990 Td /F1 12.0 Tf  [(compression. The smallest element in the array will gets assigned the value 0, the second smallest the value )] TJ ET
+BT 34.016 427.734 Td /F1 12.0 Tf  [(1, and so forth. It is easy to generate lookup tables \(e.g. using \\\(\\text{map}\\\)\), that convert a value to its )] TJ ET
+BT 34.016 413.478 Td /F1 12.0 Tf  [(index and vice versa in \\\(O\(\\log n\)\\\) time.)] TJ ET
+BT 34.016 385.284 Td /F2 14.0 Tf  [(Dynamic segment tree)] TJ ET
+BT 34.016 358.543 Td /F1 12.0 Tf  [(\(Called so because its shape is dynamic and the nodes are usually dynamically allocated. Also known as )] TJ ET
+BT 34.016 344.287 Td /F1 12.0 Tf  [(implicit segment tree)] TJ ET
+0.000 0.000 0.000 RG
+0.6 w 0 J [  ] 0 d
+34.016 341.587 m 135.344 341.587 l S
+BT 135.344 344.287 Td /F1 12.0 Tf  [( or )] TJ ET
+BT 151.340 344.287 Td /F1 12.0 Tf  [(sparse segment tree)] TJ ET
+0.6 w 0 J [  ] 0 d
+151.340 341.587 m 245.312 341.587 l S
+BT 245.312 344.287 Td /F1 12.0 Tf  [(.\))] TJ ET
+BT 34.016 318.031 Td /F1 12.0 Tf  [(Previously, we considered cases when we have the ability to build the original segment tree. But what to do )] TJ ET
+BT 34.016 303.775 Td /F1 12.0 Tf  [(if the original size is filled with some default element, but its size does not allow you to completely build up )] TJ ET
+BT 34.016 289.519 Td /F1 12.0 Tf  [(to it in advance?)] TJ ET
+BT 34.016 263.263 Td /F1 12.0 Tf  [(We can solve this problem by creating a segment tree lazily \(incrementally\). Initially, we will create only the )] TJ ET
+BT 34.016 249.007 Td /F1 12.0 Tf  [(root, and we will create the other vertexes only when we need them. In this case, we will use the )] TJ ET
+BT 34.016 234.751 Td /F1 12.0 Tf  [(implementation on pointers\(before going to the vertex children, check whether they are created, and if not, )] TJ ET
+BT 34.016 220.495 Td /F1 12.0 Tf  [(create them\). Each query has still only the complexity \\\(O\(\\log n\)\\\), which is small enough for most use-)] TJ ET
+BT 34.016 206.239 Td /F1 12.0 Tf  [(cases \(e.g. \\\(\\log_2 10^9 \\approx 30\\\)\).)] TJ ET
+BT 34.016 179.983 Td /F1 12.0 Tf  [(In this implementation we have two queries, adding a value to a position \(initially all values are \\\(0\\\)\), and )] TJ ET
+BT 34.016 165.727 Td /F1 12.0 Tf  [(computing the sum of all values in a range. )] TJ ET
+BT 243.992 165.727 Td /F4 12.0 Tf  [(Vertex\(0, n\))] TJ ET
+BT 330.392 165.727 Td /F1 12.0 Tf  [( will be the root vertex of the implicit tree.)] TJ ET
+BT 34.016 140.915 Td /F4 12.0 Tf  [(struct Vertex {)] TJ ET
+BT 34.016 128.465 Td /F4 12.0 Tf  [(    int left, right;)] TJ ET
+BT 34.016 116.015 Td /F4 12.0 Tf  [(    int sum = 0;)] TJ ET
+BT 34.016 103.565 Td /F4 12.0 Tf  [(    Vertex *left_child = nullptr, *right_child = nullptr;)] TJ ET
+BT 34.016 91.115 Td /F4 12.0 Tf  [(    Vertex\(int lb, int rb\) {)] TJ ET
+BT 34.016 78.664 Td /F4 12.0 Tf  [(        left = lb;)] TJ ET
+BT 34.016 66.214 Td /F4 12.0 Tf  [(        right = rb;)] TJ ET
+BT 34.016 53.764 Td /F4 12.0 Tf  [(    })] TJ ET
+BT 34.016 41.314 Td /F4 12.0 Tf  [(    void extend\(\) {)] TJ ET
+BT 34.016 28.863 Td /F4 12.0 Tf  [(        if \(!left_child && left + 1 < right\) {)] TJ ET
+endstream
+endobj
+66 0 obj
+<< /Type /Page
+/Parent 3 0 R
+/Annots [ 68 0 R 70 0 R 72 0 R 74 0 R 76 0 R 78 0 R 80 0 R 82 0 R 84 0 R 86 0 R 88 0 R 90 0 R 92 0 R 94 0 R 96 0 R 98 0 R 100 0 R 102 0 R 104 0 R 106 0 R 108 0 R 110 0 R 112 0 R 114 0 R ]
+/Contents 67 0 R
+>>
+endobj
+67 0 obj
+<<
+/Length 17093 >>
+stream
+
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+0.6 w 0 J [  ] 0 d
+BT 34.016 797.914 Td /F4 12.0 Tf  [(            int t = \(left + right\) / 2;)] TJ ET
+BT 34.016 785.464 Td /F4 12.0 Tf  [(            left_child = new Vertex\(left, t\);)] TJ ET
+BT 34.016 773.014 Td /F4 12.0 Tf  [(            right_child = new Vertex\(t, right\);)] TJ ET
+BT 34.016 760.563 Td /F4 12.0 Tf  [(        })] TJ ET
+BT 34.016 748.113 Td /F4 12.0 Tf  [(    })] TJ ET
+BT 34.016 735.663 Td /F4 12.0 Tf  [(    void add\(int k, int x\) {)] TJ ET
+BT 34.016 723.213 Td /F4 12.0 Tf  [(        extend\(\);)] TJ ET
+BT 34.016 710.762 Td /F4 12.0 Tf  [(        sum += x;)] TJ ET
+BT 34.016 698.312 Td /F4 12.0 Tf  [(        if \(left_child\) {)] TJ ET
+BT 34.016 685.862 Td /F4 12.0 Tf  [(            if \(k < left_child->right\))] TJ ET
+BT 34.016 673.412 Td /F4 12.0 Tf  [(                left_child->add\(k, x\);)] TJ ET
+BT 34.016 660.961 Td /F4 12.0 Tf  [(            else)] TJ ET
+BT 34.016 648.511 Td /F4 12.0 Tf  [(                right_child->add\(k, x\);)] TJ ET
+BT 34.016 636.061 Td /F4 12.0 Tf  [(        })] TJ ET
+BT 34.016 623.611 Td /F4 12.0 Tf  [(    })] TJ ET
+BT 34.016 611.160 Td /F4 12.0 Tf  [(    int get_sum\(int lq, int rq\) {)] TJ ET
+BT 34.016 598.710 Td /F4 12.0 Tf  [(        if \(lq <= left && right <= rq\))] TJ ET
+BT 34.016 586.260 Td /F4 12.0 Tf  [(            return sum;)] TJ ET
+BT 34.016 573.810 Td /F4 12.0 Tf  [(        if \(max\(left, lq\) >= min\(right, rq\)\))] TJ ET
+BT 34.016 561.359 Td /F4 12.0 Tf  [(            return 0;)] TJ ET
+BT 34.016 548.909 Td /F4 12.0 Tf  [(        extend\(\);)] TJ ET
+BT 34.016 536.459 Td /F4 12.0 Tf  [(        return left_child->get_sum\(lq, rq\) + right_child->get_sum\(lq, rq\);)] TJ ET
+BT 34.016 524.009 Td /F4 12.0 Tf  [(    })] TJ ET
+BT 34.016 511.559 Td /F4 12.0 Tf  [(};)] TJ ET
+BT 34.016 485.664 Td /F1 12.0 Tf  [(Obviously this idea can be extended in lots of different ways. E.g. by adding support for range updates via )] TJ ET
+BT 34.016 471.408 Td /F1 12.0 Tf  [(lazy propagation.)] TJ ET
+BT 34.016 436.509 Td /F2 18.0 Tf  [(Practice Problems)] TJ ET
+57.816 408.992 m 
+57.816 409.542 57.589 410.089 57.201 410.477 c
+56.812 410.866 56.266 411.092 55.716 411.092 c
+55.166 411.092 54.620 410.866 54.231 410.477 c
+53.842 410.089 53.616 409.542 53.616 408.992 c
+53.616 408.443 53.842 407.896 54.231 407.508 c
+54.620 407.119 55.166 406.892 55.716 406.892 c
+56.266 406.892 56.812 407.119 57.201 407.508 c
+57.589 407.896 57.816 408.443 57.816 408.992 c f
+0.000 0.000 0.800 rg
+BT 64.016 405.888 Td /F1 12.0 Tf  [(SPOJ - KQUERY)] TJ ET
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+64.016 403.188 m 150.680 403.188 l S
+0.000 0.000 0.000 rg
+BT 150.680 405.888 Td /F1 12.0 Tf  [( [Persistent segment tree / Merge sort tree])] TJ ET
+0.000 0.000 0.000 RG
+57.816 394.736 m 
+57.816 395.286 57.589 395.833 57.201 396.221 c
+56.812 396.610 56.266 396.836 55.716 396.836 c
+55.166 396.836 54.620 396.610 54.231 396.221 c
+53.842 395.833 53.616 395.286 53.616 394.736 c
+53.616 394.187 53.842 393.640 54.231 393.252 c
+54.620 392.863 55.166 392.636 55.716 392.636 c
+56.266 392.636 56.812 392.863 57.201 393.252 c
+57.589 393.640 57.816 394.187 57.816 394.736 c f
+0.000 0.000 0.800 rg
+BT 64.016 391.632 Td /F1 12.0 Tf  [(Codeforces - Xenia and Bit Operations)] TJ ET
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+64.016 388.932 m 250.976 388.932 l S
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+57.816 380.480 m 
+57.816 381.030 57.589 381.577 57.201 381.965 c
+56.812 382.354 56.266 382.580 55.716 382.580 c
+55.166 382.580 54.620 382.354 54.231 381.965 c
+53.842 381.577 53.616 381.030 53.616 380.480 c
+53.616 379.931 53.842 379.384 54.231 378.996 c
+54.620 378.607 55.166 378.380 55.716 378.380 c
+56.266 378.380 56.812 378.607 57.201 378.996 c
+57.589 379.384 57.816 379.931 57.816 380.480 c f
+0.000 0.000 0.800 rg
+BT 64.016 377.376 Td /F1 12.0 Tf  [(UVA 11402 - Ahoy, Pirates!)] TJ ET
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+64.016 374.676 m 202.328 374.676 l S
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+57.816 366.224 m 
+57.816 366.774 57.589 367.321 57.201 367.709 c
+56.812 368.098 56.266 368.324 55.716 368.324 c
+55.166 368.324 54.620 368.098 54.231 367.709 c
+53.842 367.321 53.616 366.774 53.616 366.224 c
+53.616 365.675 53.842 365.128 54.231 364.740 c
+54.620 364.351 55.166 364.124 55.716 364.124 c
+56.266 364.124 56.812 364.351 57.201 364.740 c
+57.589 365.128 57.816 365.675 57.816 366.224 c f
+0.000 0.000 0.800 rg
+BT 64.016 363.120 Td /F1 12.0 Tf  [(SPOJ - GSS3)] TJ ET
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+64.016 360.420 m 128.696 360.420 l S
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+57.816 351.968 m 
+57.816 352.518 57.589 353.065 57.201 353.453 c
+56.812 353.842 56.266 354.068 55.716 354.068 c
+55.166 354.068 54.620 353.842 54.231 353.453 c
+53.842 353.065 53.616 352.518 53.616 351.968 c
+53.616 351.419 53.842 350.872 54.231 350.484 c
+54.620 350.095 55.166 349.868 55.716 349.868 c
+56.266 349.868 56.812 350.095 57.201 350.484 c
+57.589 350.872 57.816 351.419 57.816 351.968 c f
+0.000 0.000 0.800 rg
+BT 64.016 348.864 Td /F1 12.0 Tf  [(Codeforces - Distinct Characters Queries)] TJ ET
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+64.016 346.164 m 261.296 346.164 l S
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+57.816 337.712 m 
+57.816 338.262 57.589 338.809 57.201 339.197 c
+56.812 339.586 56.266 339.812 55.716 339.812 c
+55.166 339.812 54.620 339.586 54.231 339.197 c
+53.842 338.809 53.616 338.262 53.616 337.712 c
+53.616 337.163 53.842 336.616 54.231 336.228 c
+54.620 335.839 55.166 335.612 55.716 335.612 c
+56.266 335.612 56.812 335.839 57.201 336.228 c
+57.589 336.616 57.816 337.163 57.816 337.712 c f
+0.000 0.000 0.800 rg
+BT 64.016 334.608 Td /F1 12.0 Tf  [(Codeforces - Knight Tournament)] TJ ET
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+64.016 331.908 m 223.652 331.908 l S
+0.000 0.000 0.000 rg
+BT 223.652 334.608 Td /F1 12.0 Tf  [( [For beginners])] TJ ET
+0.000 0.000 0.000 RG
+57.816 323.456 m 
+57.816 324.006 57.589 324.553 57.201 324.941 c
+56.812 325.330 56.266 325.556 55.716 325.556 c
+55.166 325.556 54.620 325.330 54.231 324.941 c
+53.842 324.553 53.616 324.006 53.616 323.456 c
+53.616 322.907 53.842 322.360 54.231 321.972 c
+54.620 321.583 55.166 321.356 55.716 321.356 c
+56.266 321.356 56.812 321.583 57.201 321.972 c
+57.589 322.360 57.816 322.907 57.816 323.456 c f
+0.000 0.000 0.800 rg
+BT 64.016 320.352 Td /F1 12.0 Tf  [(Codeforces - Ant colony)] TJ ET
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+64.016 317.652 m 182.324 317.652 l S
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+57.816 309.200 m 
+57.816 309.750 57.589 310.297 57.201 310.685 c
+56.812 311.074 56.266 311.300 55.716 311.300 c
+55.166 311.300 54.620 311.074 54.231 310.685 c
+53.842 310.297 53.616 309.750 53.616 309.200 c
+53.616 308.651 53.842 308.104 54.231 307.716 c
+54.620 307.327 55.166 307.100 55.716 307.100 c
+56.266 307.100 56.812 307.327 57.201 307.716 c
+57.589 308.104 57.816 308.651 57.816 309.200 c f
+0.000 0.000 0.800 rg
+BT 64.016 306.096 Td /F1 12.0 Tf  [(Codeforces - Drazil and Park)] TJ ET
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+64.016 303.396 m 203.972 303.396 l S
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+57.816 294.944 m 
+57.816 295.494 57.589 296.041 57.201 296.429 c
+56.812 296.818 56.266 297.044 55.716 297.044 c
+55.166 297.044 54.620 296.818 54.231 296.429 c
+53.842 296.041 53.616 295.494 53.616 294.944 c
+53.616 294.395 53.842 293.848 54.231 293.460 c
+54.620 293.071 55.166 292.844 55.716 292.844 c
+56.266 292.844 56.812 293.071 57.201 293.460 c
+57.589 293.848 57.816 294.395 57.816 294.944 c f
+0.000 0.000 0.800 rg
+BT 64.016 291.840 Td /F1 12.0 Tf  [(Codeforces - Circular RMQ)] TJ ET
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+64.016 289.140 m 198.320 289.140 l S
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+57.816 280.688 m 
+57.816 281.238 57.589 281.785 57.201 282.173 c
+56.812 282.562 56.266 282.788 55.716 282.788 c
+55.166 282.788 54.620 282.562 54.231 282.173 c
+53.842 281.785 53.616 281.238 53.616 280.688 c
+53.616 280.139 53.842 279.592 54.231 279.204 c
+54.620 278.815 55.166 278.588 55.716 278.588 c
+56.266 278.588 56.812 278.815 57.201 279.204 c
+57.589 279.592 57.816 280.139 57.816 280.688 c f
+0.000 0.000 0.800 rg
+BT 64.016 277.584 Td /F1 12.0 Tf  [(Codeforces - Lucky Array)] TJ ET
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+64.016 274.884 m 190.304 274.884 l S
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+57.816 266.432 m 
+57.816 266.982 57.589 267.529 57.201 267.917 c
+56.812 268.306 56.266 268.532 55.716 268.532 c
+55.166 268.532 54.620 268.306 54.231 267.917 c
+53.842 267.529 53.616 266.982 53.616 266.432 c
+53.616 265.883 53.842 265.336 54.231 264.948 c
+54.620 264.559 55.166 264.332 55.716 264.332 c
+56.266 264.332 56.812 264.559 57.201 264.948 c
+57.589 265.336 57.816 265.883 57.816 266.432 c f
+0.000 0.000 0.800 rg
+BT 64.016 263.328 Td /F1 12.0 Tf  [(Codeforces - The Child and Sequence)] TJ ET
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+64.016 260.628 m 246.308 260.628 l S
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+57.816 252.176 m 
+57.816 252.726 57.589 253.273 57.201 253.661 c
+56.812 254.050 56.266 254.276 55.716 254.276 c
+55.166 254.276 54.620 254.050 54.231 253.661 c
+53.842 253.273 53.616 252.726 53.616 252.176 c
+53.616 251.627 53.842 251.080 54.231 250.692 c
+54.620 250.303 55.166 250.076 55.716 250.076 c
+56.266 250.076 56.812 250.303 57.201 250.692 c
+57.589 251.080 57.816 251.627 57.816 252.176 c f
+0.000 0.000 0.800 rg
+BT 64.016 249.072 Td /F1 12.0 Tf  [(Codeforces - DZY Loves Fibonacci Numbers)] TJ ET
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+64.016 246.372 m 282.968 246.372 l S
+0.000 0.000 0.000 rg
+BT 282.968 249.072 Td /F1 12.0 Tf  [( [Lazy propagation])] TJ ET
+0.000 0.000 0.000 RG
+57.816 237.920 m 
+57.816 238.470 57.589 239.017 57.201 239.405 c
+56.812 239.794 56.266 240.020 55.716 240.020 c
+55.166 240.020 54.620 239.794 54.231 239.405 c
+53.842 239.017 53.616 238.470 53.616 237.920 c
+53.616 237.371 53.842 236.824 54.231 236.436 c
+54.620 236.047 55.166 235.820 55.716 235.820 c
+56.266 235.820 56.812 236.047 57.201 236.436 c
+57.589 236.824 57.816 237.371 57.816 237.920 c f
+0.000 0.000 0.800 rg
+BT 64.016 234.816 Td /F1 12.0 Tf  [(Codeforces - Alphabet Permutations)] TJ ET
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+64.016 232.116 m 238.988 232.116 l S
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+57.816 223.664 m 
+57.816 224.214 57.589 224.761 57.201 225.149 c
+56.812 225.538 56.266 225.764 55.716 225.764 c
+55.166 225.764 54.620 225.538 54.231 225.149 c
+53.842 224.761 53.616 224.214 53.616 223.664 c
+53.616 223.115 53.842 222.568 54.231 222.180 c
+54.620 221.791 55.166 221.564 55.716 221.564 c
+56.266 221.564 56.812 221.791 57.201 222.180 c
+57.589 222.568 57.816 223.115 57.816 223.664 c f
+0.000 0.000 0.800 rg
+BT 64.016 220.560 Td /F1 12.0 Tf  [(Codeforces - Eyes Closed)] TJ ET
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+64.016 217.860 m 188.324 217.860 l S
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+57.816 209.408 m 
+57.816 209.958 57.589 210.505 57.201 210.893 c
+56.812 211.282 56.266 211.508 55.716 211.508 c
+55.166 211.508 54.620 211.282 54.231 210.893 c
+53.842 210.505 53.616 209.958 53.616 209.408 c
+53.616 208.859 53.842 208.312 54.231 207.924 c
+54.620 207.535 55.166 207.308 55.716 207.308 c
+56.266 207.308 56.812 207.535 57.201 207.924 c
+57.589 208.312 57.816 208.859 57.816 209.408 c f
+0.000 0.000 0.800 rg
+BT 64.016 206.304 Td /F1 12.0 Tf  [(Codeforces - Kefa and Watch)] TJ ET
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+64.016 203.604 m 206.624 203.604 l S
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+57.816 195.152 m 
+57.816 195.702 57.589 196.249 57.201 196.637 c
+56.812 197.026 56.266 197.252 55.716 197.252 c
+55.166 197.252 54.620 197.026 54.231 196.637 c
+53.842 196.249 53.616 195.702 53.616 195.152 c
+53.616 194.603 53.842 194.056 54.231 193.668 c
+54.620 193.279 55.166 193.052 55.716 193.052 c
+56.266 193.052 56.812 193.279 57.201 193.668 c
+57.589 194.056 57.816 194.603 57.816 195.152 c f
+0.000 0.000 0.800 rg
+BT 64.016 192.048 Td /F1 12.0 Tf  [(Codeforces - A Simple Task)] TJ ET
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+64.016 189.348 m 200.660 189.348 l S
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+57.816 180.896 m 
+57.816 181.446 57.589 181.993 57.201 182.381 c
+56.812 182.770 56.266 182.996 55.716 182.996 c
+55.166 182.996 54.620 182.770 54.231 182.381 c
+53.842 181.993 53.616 181.446 53.616 180.896 c
+53.616 180.347 53.842 179.800 54.231 179.412 c
+54.620 179.023 55.166 178.796 55.716 178.796 c
+56.266 178.796 56.812 179.023 57.201 179.412 c
+57.589 179.800 57.816 180.347 57.816 180.896 c f
+0.000 0.000 0.800 rg
+BT 64.016 177.792 Td /F1 12.0 Tf  [(Codeforces - SUM and REPLACE)] TJ ET
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+64.016 175.092 m 231.332 175.092 l S
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+57.816 166.640 m 
+57.816 167.190 57.589 167.737 57.201 168.125 c
+56.812 168.514 56.266 168.740 55.716 168.740 c
+55.166 168.740 54.620 168.514 54.231 168.125 c
+53.842 167.737 53.616 167.190 53.616 166.640 c
+53.616 166.091 53.842 165.544 54.231 165.156 c
+54.620 164.767 55.166 164.540 55.716 164.540 c
+56.266 164.540 56.812 164.767 57.201 165.156 c
+57.589 165.544 57.816 166.091 57.816 166.640 c f
+0.000 0.000 0.800 rg
+BT 64.016 163.536 Td /F1 12.0 Tf  [(Codeforces - XOR on Segment)] TJ ET
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+64.016 160.836 m 213.992 160.836 l S
+0.000 0.000 0.000 rg
+BT 213.992 163.536 Td /F1 12.0 Tf  [( [Lazy propagation])] TJ ET
+0.000 0.000 0.000 RG
+57.816 152.384 m 
+57.816 152.934 57.589 153.481 57.201 153.869 c
+56.812 154.258 56.266 154.484 55.716 154.484 c
+55.166 154.484 54.620 154.258 54.231 153.869 c
+53.842 153.481 53.616 152.934 53.616 152.384 c
+53.616 151.835 53.842 151.288 54.231 150.900 c
+54.620 150.511 55.166 150.284 55.716 150.284 c
+56.266 150.284 56.812 150.511 57.201 150.900 c
+57.589 151.288 57.816 151.835 57.816 152.384 c f
+0.000 0.000 0.800 rg
+BT 64.016 149.280 Td /F1 12.0 Tf  [(Codeforces - Please, another Queries on Array?)] TJ ET
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+64.016 146.580 m 292.940 146.580 l S
+0.000 0.000 0.000 rg
+BT 292.940 149.280 Td /F1 12.0 Tf  [( [Lazy propagation])] TJ ET
+0.000 0.000 0.000 RG
+57.816 138.128 m 
+57.816 138.678 57.589 139.225 57.201 139.613 c
+56.812 140.002 56.266 140.228 55.716 140.228 c
+55.166 140.228 54.620 140.002 54.231 139.613 c
+53.842 139.225 53.616 138.678 53.616 138.128 c
+53.616 137.579 53.842 137.032 54.231 136.644 c
+54.620 136.255 55.166 136.028 55.716 136.028 c
+56.266 136.028 56.812 136.255 57.201 136.644 c
+57.589 137.032 57.816 137.579 57.816 138.128 c f
+0.000 0.000 0.800 rg
+BT 64.016 135.024 Td /F1 12.0 Tf  [(COCI - Deda)] TJ ET
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+64.016 132.324 m 128.000 132.324 l S
+0.000 0.000 0.000 rg
+BT 128.000 135.024 Td /F1 12.0 Tf  [( [Last element smaller or equal to x / Binary search])] TJ ET
+0.000 0.000 0.000 RG
+57.816 123.872 m 
+57.816 124.422 57.589 124.969 57.201 125.357 c
+56.812 125.746 56.266 125.972 55.716 125.972 c
+55.166 125.972 54.620 125.746 54.231 125.357 c
+53.842 124.969 53.616 124.422 53.616 123.872 c
+53.616 123.323 53.842 122.776 54.231 122.388 c
+54.620 121.999 55.166 121.772 55.716 121.772 c
+56.266 121.772 56.812 121.999 57.201 122.388 c
+57.589 122.776 57.816 123.323 57.816 123.872 c f
+0.000 0.000 0.800 rg
+BT 64.016 120.768 Td /F1 12.0 Tf  [(Codeforces - The Untended Antiquity)] TJ ET
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+64.016 118.068 m 245.984 118.068 l S
+0.000 0.000 0.000 rg
+BT 245.984 120.768 Td /F1 12.0 Tf  [( [2D])] TJ ET
+0.000 0.000 0.000 RG
+57.816 109.616 m 
+57.816 110.166 57.589 110.713 57.201 111.101 c
+56.812 111.490 56.266 111.716 55.716 111.716 c
+55.166 111.716 54.620 111.490 54.231 111.101 c
+53.842 110.713 53.616 110.166 53.616 109.616 c
+53.616 109.067 53.842 108.520 54.231 108.132 c
+54.620 107.743 55.166 107.516 55.716 107.516 c
+56.266 107.516 56.812 107.743 57.201 108.132 c
+57.589 108.520 57.816 109.067 57.816 109.616 c f
+0.000 0.000 0.800 rg
+BT 64.016 106.512 Td /F1 12.0 Tf  [(CSES - Hotel Queries)] TJ ET
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+64.016 103.812 m 169.676 103.812 l S
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+57.816 95.360 m 
+57.816 95.910 57.589 96.457 57.201 96.845 c
+56.812 97.234 56.266 97.460 55.716 97.460 c
+55.166 97.460 54.620 97.234 54.231 96.845 c
+53.842 96.457 53.616 95.910 53.616 95.360 c
+53.616 94.811 53.842 94.264 54.231 93.876 c
+54.620 93.487 55.166 93.260 55.716 93.260 c
+56.266 93.260 56.812 93.487 57.201 93.876 c
+57.589 94.264 57.816 94.811 57.816 95.360 c f
+0.000 0.000 0.800 rg
+BT 64.016 92.256 Td /F1 12.0 Tf  [(CSES - Polynomial Queries)] TJ ET
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+64.016 89.556 m 198.356 89.556 l S
+0.000 0.000 0.000 rg
+0.000 0.000 0.000 RG
+57.816 81.104 m 
+57.816 81.654 57.589 82.201 57.201 82.589 c
+56.812 82.978 56.266 83.204 55.716 83.204 c
+55.166 83.204 54.620 82.978 54.231 82.589 c
+53.842 82.201 53.616 81.654 53.616 81.104 c
+53.616 80.555 53.842 80.008 54.231 79.620 c
+54.620 79.231 55.166 79.004 55.716 79.004 c
+56.266 79.004 56.812 79.231 57.201 79.620 c
+57.589 80.008 57.816 80.555 57.816 81.104 c f
+0.000 0.000 0.800 rg
+BT 64.016 78.000 Td /F1 12.0 Tf  [(CSES - Range Updates and Sums)] TJ ET
+0.000 0.000 0.800 RG
+0.6 w 0 J [  ] 0 d
+64.016 75.300 m 225.680 75.300 l S
+endstream
+endobj
+68 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 69 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 64.0157 404.8077 150.6797 416.6877 ]
+>>
+endobj
+69 0 obj
+<< /Type /Action
+/S /URI
+/URI (http://www.spoj.com/problems/KQUERY/)
+>>
+endobj
+70 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 71 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 64.0157 390.5517 250.9757 402.4317 ]
+>>
+endobj
+71 0 obj
+<< /Type /Action
+/S /URI
+/URI (https://codeforces.com/problemset/problem/339/D)
+>>
+endobj
+72 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 73 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 64.0157 376.2957 202.3277 388.1757 ]
+>>
+endobj
+73 0 obj
+<< /Type /Action
+/S /URI
+/URI (https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=2397)
+>>
+endobj
+74 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 75 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 64.0157 362.0397 128.6957 373.9197 ]
+>>
+endobj
+75 0 obj
+<< /Type /Action
+/S /URI
+/URI (http://www.spoj.com/problems/GSS3/)
+>>
+endobj
+76 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 77 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 64.0157 347.7837 261.2957 359.6637 ]
+>>
+endobj
+77 0 obj
+<< /Type /Action
+/S /URI
+/URI (https://codeforces.com/problemset/problem/1234/D)
+>>
+endobj
+78 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 79 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 64.0157 333.5277 223.6517 345.4077 ]
+>>
+endobj
+79 0 obj
+<< /Type /Action
+/S /URI
+/URI (https://codeforces.com/contest/356/problem/A)
+>>
+endobj
+80 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 81 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 64.0157 319.2717 182.3237 331.1517 ]
+>>
+endobj
+81 0 obj
+<< /Type /Action
+/S /URI
+/URI (https://codeforces.com/contest/474/problem/F)
+>>
+endobj
+82 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 83 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 64.0157 305.0157 203.9717 316.8957 ]
+>>
+endobj
+83 0 obj
+<< /Type /Action
+/S /URI
+/URI (https://codeforces.com/contest/515/problem/E)
+>>
+endobj
+84 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 85 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 64.0157 290.7597 198.3197 302.6397 ]
+>>
+endobj
+85 0 obj
+<< /Type /Action
+/S /URI
+/URI (https://codeforces.com/problemset/problem/52/C)
+>>
+endobj
+86 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 87 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 64.0157 276.5037 190.3037 288.3837 ]
+>>
+endobj
+87 0 obj
+<< /Type /Action
+/S /URI
+/URI (https://codeforces.com/contest/121/problem/E)
+>>
+endobj
+88 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 89 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 64.0157 262.2477 246.3077 274.1277 ]
+>>
+endobj
+89 0 obj
+<< /Type /Action
+/S /URI
+/URI (https://codeforces.com/contest/438/problem/D)
+>>
+endobj
+90 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 91 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 64.0157 247.9917 282.9677 259.8717 ]
+>>
+endobj
+91 0 obj
+<< /Type /Action
+/S /URI
+/URI (https://codeforces.com/contest/446/problem/C)
+>>
+endobj
+92 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 93 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 64.0157 233.7357 238.9877 245.6157 ]
+>>
+endobj
+93 0 obj
+<< /Type /Action
+/S /URI
+/URI (https://codeforces.com/problemset/problem/610/E)
+>>
+endobj
+94 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 95 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 64.0157 219.4797 188.3237 231.3597 ]
+>>
+endobj
+95 0 obj
+<< /Type /Action
+/S /URI
+/URI (https://codeforces.com/problemset/problem/895/E)
+>>
+endobj
+96 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 97 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 64.0157 205.2237 206.6237 217.1037 ]
+>>
+endobj
+97 0 obj
+<< /Type /Action
+/S /URI
+/URI (https://codeforces.com/problemset/problem/580/E)
+>>
+endobj
+98 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 99 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 64.0157 190.9677 200.6597 202.8477 ]
+>>
+endobj
+99 0 obj
+<< /Type /Action
+/S /URI
+/URI (https://codeforces.com/problemset/problem/558/E)
+>>
+endobj
+100 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 101 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 64.0157 176.7117 231.3317 188.5917 ]
+>>
+endobj
+101 0 obj
+<< /Type /Action
+/S /URI
+/URI (https://codeforces.com/problemset/problem/920/F)
+>>
+endobj
+102 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 103 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 64.0157 162.4557 213.9917 174.3357 ]
+>>
+endobj
+103 0 obj
+<< /Type /Action
+/S /URI
+/URI (https://codeforces.com/problemset/problem/242/E)
+>>
+endobj
+104 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 105 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 64.0157 148.1997 292.9397 160.0797 ]
+>>
+endobj
+105 0 obj
+<< /Type /Action
+/S /URI
+/URI (https://codeforces.com/problemset/problem/1114/F)
+>>
+endobj
+106 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 107 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 64.0157 133.9437 127.9997 145.8237 ]
+>>
+endobj
+107 0 obj
+<< /Type /Action
+/S /URI
+/URI (https://oj.uz/problem/view/COCI17_deda)
+>>
+endobj
+108 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 109 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 64.0157 119.6877 245.9837 131.5677 ]
+>>
+endobj
+109 0 obj
+<< /Type /Action
+/S /URI
+/URI (https://codeforces.com/problemset/problem/869/E)
+>>
+endobj
+110 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 111 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 64.0157 105.4317 169.6757 117.3117 ]
+>>
+endobj
+111 0 obj
+<< /Type /Action
+/S /URI
+/URI (https://cses.fi/problemset/task/1143)
+>>
+endobj
+112 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 113 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 64.0157 91.1757 198.3557 103.0557 ]
+>>
+endobj
+113 0 obj
+<< /Type /Action
+/S /URI
+/URI (https://cses.fi/problemset/task/1736)
+>>
+endobj
+114 0 obj
+<< /Type /Annot
+/Subtype /Link
+/A 115 0 R
+/Border [0 0 0]
+/H /I
+/Rect [ 64.0157 76.9197 225.6797 88.7997 ]
+>>
+endobj
+115 0 obj
+<< /Type /Action
+/S /URI
+/URI (https://cses.fi/problemset/task/1735)
+>>
+endobj
+xref
+0 116
+0000000000 65535 f 
+0000000009 00000 n 
+0000000074 00000 n 
+0000000120 00000 n 
+0000000461 00000 n 
+0000000490 00000 n 
+0000000604 00000 n 
+0000000693 00000 n 
+0000006668 00000 n 
+0000006777 00000 n 
+0000006885 00000 n 
+0000007012 00000 n 
+0000007114 00000 n 
+0000007240 00000 n 
+0000007322 00000 n 
+0000007387 00000 n 
+0000013188 00000 n 
+0000013299 00000 n 
+0000013405 00000 n 
+0000013470 00000 n 
+0000019640 00000 n 
+0000019705 00000 n 
+0000024800 00000 n 
+0000024865 00000 n 
+0000029049 00000 n 
+0000029114 00000 n 
+0000034421 00000 n 
+0000034486 00000 n 
+0000038882 00000 n 
+0000038947 00000 n 
+0000043998 00000 n 
+0000044063 00000 n 
+0000050411 00000 n 
+0000050476 00000 n 
+0000055398 00000 n 
+0000055463 00000 n 
+0000060968 00000 n 
+0000061033 00000 n 
+0000065904 00000 n 
+0000065969 00000 n 
+0000071881 00000 n 
+0000071965 00000 n 
+0000077366 00000 n 
+0000077493 00000 n 
+0000077596 00000 n 
+0000077661 00000 n 
+0000083428 00000 n 
+0000083493 00000 n 
+0000088134 00000 n 
+0000088199 00000 n 
+0000092950 00000 n 
+0000093015 00000 n 
+0000098129 00000 n 
+0000098194 00000 n 
+0000104078 00000 n 
+0000104169 00000 n 
+0000110018 00000 n 
+0000110146 00000 n 
+0000110256 00000 n 
+0000110383 00000 n 
+0000110493 00000 n 
+0000110577 00000 n 
+0000117014 00000 n 
+0000117142 00000 n 
+0000117234 00000 n 
+0000117299 00000 n 
+0000123022 00000 n 
+0000123275 00000 n 
+0000140422 00000 n 
+0000140549 00000 n 
+0000140637 00000 n 
+0000140764 00000 n 
+0000140863 00000 n 
+0000140990 00000 n 
+0000141142 00000 n 
+0000141269 00000 n 
+0000141355 00000 n 
+0000141482 00000 n 
+0000141582 00000 n 
+0000141709 00000 n 
+0000141805 00000 n 
+0000141932 00000 n 
+0000142028 00000 n 
+0000142155 00000 n 
+0000142251 00000 n 
+0000142378 00000 n 
+0000142476 00000 n 
+0000142603 00000 n 
+0000142699 00000 n 
+0000142826 00000 n 
+0000142922 00000 n 
+0000143049 00000 n 
+0000143145 00000 n 
+0000143272 00000 n 
+0000143371 00000 n 
+0000143498 00000 n 
+0000143597 00000 n 
+0000143724 00000 n 
+0000143823 00000 n 
+0000143950 00000 n 
+0000144049 00000 n 
+0000144178 00000 n 
+0000144278 00000 n 
+0000144407 00000 n 
+0000144507 00000 n 
+0000144636 00000 n 
+0000144737 00000 n 
+0000144866 00000 n 
+0000144957 00000 n 
+0000145086 00000 n 
+0000145186 00000 n 
+0000145315 00000 n 
+0000145404 00000 n 
+0000145532 00000 n 
+0000145621 00000 n 
+0000145748 00000 n 
+trailer
+<<
+/Size 116
+/Root 1 0 R
+/Info 5 0 R
+>>
+startxref
+145837
+%%EOF
